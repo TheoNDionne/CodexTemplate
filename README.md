@@ -1,4 +1,4 @@
-# Goliath: A minimal template for typesetting longform documents in latex
+# Codex: A minimal template for typesetting longform documents in latex
 
 ## Description
 
