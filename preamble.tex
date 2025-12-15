@@ -1,0 +1,116 @@
+%-----------------PDFLATEX----------------------
+% Pour pdflatex, décommenter les lignes qui suivent
+\usepackage[utf8]{inputenc} % encodage des caractères. choix: utf8, latin1, applemac
+\usepackage[T1]{fontenc}
+
+% choix du style de police (tout commenter pour les polices TeX habituelles [computer modern])
+\usepackage{charter}
+\usepackage[charter, cal=cmcal]{mathdesign}
+
+
+% \usepackage{newpxtext}
+% \usepackage[upint]{newpxmath}
+% \usepackage[cal=cm]{mathalfa}
+
+
+\usepackage{amsmath}        % ajoute des environnements mathématiques
+\usepackage{bm}				% ajoute des caractères grecs en gras
+\usepackage{setspace} 		% gère l'interligne
+\usepackage[french]{babel}  % comment this line if the thesis is in English
+\addto\captionsfrench{\renewcommand\frenchtablename{{\FBfigtabshape Tableau}}}
+\usepackage{cite}
+\usepackage[babel=true,protrusion=true,spacing,tracking]{microtype}
+\usepackage{graphicx}		% gère l'insertion des figures
+\usepackage{subfig}			% permet d'ajouter des sous-figures
+\usepackage{geometry}		% gère les dimensions du document (mise en page)
+\usepackage{fancybox}		% définit des macros pour des boîtes, des cadres, etc.
+\usepackage{url}            % permet de typographier des url
+\usepackage{float}
+\usepackage{braket}
+
+% modifie la manière dont les descriptions de tableaux et figures sont disposées
+\usepackage[format=hang,margin=5mm,font=small,labelfont=bf,labelsep=space]{caption}
+
+%-------------------------------------------------------------------------------
+% Pass hyperref options before loading pdfx
+\PassOptionsToPackage{
+    backref=page,
+    pagebackref=true,
+    hyperindex=true,
+    bookmarks=true,
+    pdfa
+}{hyperref}
+
+\usepackage[a-2b,mathxmp]{pdfx}[2018/12/22]
+
+% \usepackage{theme/colors_vert_et_or}
+\usepackage{theme/colors_crimson}
+
+% options PDF. Requiert de compiler avec pdflatex
+\hypersetup{
+    colorlinks=true,         % colorise les liens
+    breaklinks=true,         % permet le retour la ligne dans les liens trop longs
+    urlcolor=URLColor,   % couleur des hyperliens (doit inclure x11names dans xcolor ci-dessus)
+    linkcolor=LinkColor,  % couleur des liens internes
+    citecolor=CiteColor,  % couleur des liens de citation
+    bookmarksopen=true,      % ouvre les signets PDF au départ
+}
+
+% \usepackage[x11names]{xcolor}
+
+%-----------------------------------------------------------------------------
+% Tableaux
+\usepackage{array} % généralise certaines fonctions de tabulation
+\newcolumntype{C}{>{$\displaystyle}c<{$}} % colonne mathématique centrée
+\newcolumntype{L}{>{$\displaystyle}l<{$}} % colonne mathématique alignée à gauche
+\newcolumntype{R}{>{$\displaystyle}r<{$}} % colonne mathématique alignée à droite
+\renewcommand{\arraystretch}{1.5}
+\usepackage{dcolumn} % permet l'alignement sur le point décimal
+
+%-------------------------------------------------------------------------------
+% Mise en page
+\usepackage{theme/layout}
+%-------------------------------------------------------------------------------
+% Macros
+
+%\newcommand\figpath{./figs} % définit le chemin d'accès aux figures
+%\graphicspath{{figs/}}
+\usepackage[nice]{nicefrac} % Nicer fractions
+\usepackage{bbm} % More bold fonts.
+\usepackage{esint} % Integrals
+\usepackage{cancel} % Allows to scratch expressions.
+\usepackage{mathtools} % Tools for math formating.
+\usepackage{slashed} % Allows to slash individual characters.
+\usepackage{xargs} % Better handling of optional arguments for commands
+\usepackage{macros} % Mes macros LaTeX spécifiques
+
+\newcommand\itsym{$\bullet$} % symbole pour les listes
+%-------------------------------------------------------------------------------
+% Figures TiKz
+\usepackage{tikz}
+\usetikzlibrary{
+	calc,
+	patterns,
+	positioning,
+    external,
+    shapes,
+    fit,
+    backgrounds,
+    arrows.meta,
+	positioning,
+    decorations,
+    decorations.pathmorphing,
+    decorations.markings,
+    shapes.geometric,
+    arrows
+}
+\tikzexternalize[prefix=figures/pdf/]
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\usepackage{theme/tikzstyles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

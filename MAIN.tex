@@ -1,0 +1,137 @@
+% !TEX root = MAIN.tex
+
+% Modèle de thèse ou mémoire en LaTeX
+% D. Sénéchal, Faculté des sciences, Université de Sherbrooke (2013) Modfié par Jérôme (2025)
+% Ce document est fourni sans garanties, et peut être modifié librement par l'utilisateur
+%===============================================================================
+\documentclass[titlepage,oneside,letterpaper,11pt]{book} % version électronique
+%\documentclass[titlepage,twoside,letterpaper,openright,12pt]{book} % version imprimée
+
+% Définit la date ici.
+\def\DATE{\color{red}DATE DU DEPOT FINAL\color{black}}
+\input{preamble.tex}
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+% page titre
+\input{sections/debut/page_titre.tex}
+\frontmatter
+%-------------------------------------------------------------------------------
+% page de composition du jury
+% modifier/commenter au besoin
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\vglue 1cm
+Le \DATE \\[1cm]
+{\it le jury a accepté le mémoire de Monsieur Hubbard dans sa version finale.}\\[1cm]
+Membres du jury\\[1cm]
+
+Professeur Dirac\\
+Directeur de recherche\\
+Département de physique\\[8mm plus 5mm]
+
+Professeur Plank\\
+Membre interne\\
+Département de physique\\[8mm plus 5mm]
+
+Professeur Pauli\\
+Président rapporteur\\
+Département de physique\\[8mm plus 5mm]
+
+
+\end{center}
+
+
+%-------------------------------------------------------------------------------
+% Page de dédicace
+
+\newpage
+\vglue 5cm
+\begin{flushright}
+À mon idole, GTools
+\end{flushright}
+
+
+%-------------------------------------------------------------------------------
+% Sommaire
+\newpage
+\onehalfspacing
+\addcontentsline{toc}{chapter}{Sommaire}\chapter*{Sommaire}
+\input{sections/debut/sommaire}
+
+%-------------------------------------------------------------------------------
+% remerciements
+
+\chapter{Remerciements}
+
+\markboth{Remerciements}{Remerciements}
+\input{sections/debut/remerciements}
+
+%-------------------------------------------------------------------------------
+% tables des matières, des tableaux et des figures, etc.
+
+{
+\setlength{\parskip}{0ex}
+\tableofcontents
+\listoftables
+\listoffigures
+}
+
+% facultatif: liste des notations (abbréviations) utilisées
+% \addcontentsline{toc}{chapter}{Notations}\chapter*{Notations}
+% \markboth{Notations}{}
+% \input{notation.tex}
+
+%-------------------------------------------------------------------------------
+% publications
+
+\chapter{Publications}
+\markboth{Publications}{Publications}
+\input{sections/debut/publications}
+
+%-------------------------------------------------------------------------------
+% corps du document
+\mainmatter
+
+
+% facultatif: introduction non numérotée
+\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Introduction}
+\markboth{Introduction}{Introduction}
+\input{sections/debut/introduction}
+
+% \part{Une partie}
+\input{sections/theorie/theorie.tex}
+\input{sections/methode/methode.tex}
+
+
+%-------------------------------------------------------------------------------
+% conclusion
+
+\addcontentsline{toc}{chapter}{Conclusion}\chapter*{Conclusion}
+\markboth{Conclusion}{Conclusion}
+\input{sections/fin/conclusion}
+
+
+%-------------------------------------------------------------------------------
+% annexes
+%\appendix
+%\renewcommand\chapterstring{Annexe}
+% \input{sections/fin/annexe}
+
+%-------------------------------------------------------------------------------
+% bibliographie
+
+\singlespacing
+\nocite{*}
+\bibliographystyle{styles/nature-fr} %Utiliser "nature" pour la version anglaise
+\addcontentsline{toc}{chapter}{Bibliographie}
+\bibliography{These}
+
+
+
+
+\end{document}

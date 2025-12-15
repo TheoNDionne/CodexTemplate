@@ -1,0 +1,217 @@
+\tikzset{external/force remake}
+\def\vertexsize{1.5pt}
+\def\bubblewidth{2.25}
+\def\bubbletop{0.55}
+\def\col2dist{3.25cm}
+\def\row2dist{-2.25cm}
+\def\plus1{2.75cm}
+\def\equal{-.5cm}
+
+\tikzsetnextfilename{vertex_corrections}
+\definecolor{mypink}{HTML}{d7c3f3}
+\definecolor{myblue}{HTML}{a3ef8f}
+\begin{tikzpicture}[]
+    \begin{scope}[xshift=-1.5cm]
+        %\draw (0,0) node[align=right] {\Large $\chi_{\mathrm{j}_x\mathrm{j}_x}$};
+        \draw (0,0) node[align=right] {\Large $\chi_{\mathrm{j}\mathrm{j}}$};
+    \end{scope}
+    \begin{scope}[xshift=\equal]
+        \draw (0,0) node {$=$};
+    \end{scope}
+    \begin{scope}[xshift=\equal, yshift=\row2dist]
+        \draw (0,0) node {$+$};
+    \end{scope}
+    \begin{scope}[xshift=\equal, yshift=2*\row2dist]
+        \draw (0,0) node {$+$};
+    \end{scope}
+    \begin{scope}[xshift=\equal]
+        \draw (0,0) node {$=$};
+    \end{scope}
+    % Bubble
+  \begin{scope}
+      \draw[rounded corners, fill=SupportColor, draw=SupportColor] (-0.2, 0.8) rectangle (2.4, -0.8);
+      % coordinates
+      \coordinate (in) at (0,0);
+      \coordinate (out) at (\bubblewidth,0);
+
+      % edges
+      \draw (in) edge[electron_full,out=60,in=120] node[above, yshift=.4cm] {\small Bulle} (out);
+      \draw (out) edge[electron_full,out=-120,in=-60] (in);
+
+    % Vertices
+    \draw[thick, fill=white] (in) circle (\vertexsize);
+    \draw[thick, fill=white] (out) circle (\vertexsize);
+  \end{scope}
+  % VC1
+  \begin{scope}[xshift=\col2dist]
+      \draw[rounded corners, fill=mypink, draw=mypink] (-0.2, 0.8) rectangle (2.4, -0.8);
+
+      % coordinates
+      \coordinate (in) at (0, 0);
+      \coordinate (out) at (\bubblewidth, 0);
+      \coordinate (u) at (\bubblewidth*0.5, \bubbletop);
+      \coordinate (d) at (\bubblewidth*0.5, -\bubbletop);
+
+      % edges
+      \draw (u) edge[photon,out=270,in=90] (d);
+      \draw (in) edge[electron_full,out=60,in=181] (u);
+      \draw (u) edge[electron,out=359,in=120] (out);
+
+      \draw (d) edge[electron_full,out=179,in=-60] (in);
+      \draw (out) edge[electron,out=-120,in=1] (d);
+
+      \draw (u) node[above, yshift=.4cm] {\small VC1};
+
+    % Vertices
+    \draw[thick, fill=white] (in) circle (\vertexsize);
+    \draw[thick, fill=white] (out) circle (\vertexsize);
+    \draw[thick, fill=black] (u) circle (\vertexsize);
+    \draw[thick, fill=black] (d) circle (\vertexsize);
+
+  \end{scope}
+% \begin{scope}[xshift=5.5cm]
+%         \draw (0,0) node {$+$};
+%     \end{scope}
+% VC2
+  \begin{scope}[yshift=\row2dist]
+      \draw[rounded corners, fill=myblue, draw=myblue] (-0.2, 0.8) rectangle (5.65, -3);
+      % coordinates
+      \coordinate (in) at (0, 0);
+      \coordinate (out) at (\bubblewidth, 0);
+      \coordinate (u1) at (0.34*\bubblewidth, \bubbletop);
+      \coordinate (d1) at (0.34*\bubblewidth, -\bubbletop);
+      \coordinate (u2) at (0.66*\bubblewidth, \bubbletop);
+      \coordinate (d2) at (0.66*\bubblewidth, -\bubbletop);
+
+      % edges
+
+      \draw (in) edge[electron_full,out=60,in=181] node[above] {} (u1);
+      \draw (u2) edge[electron, out=359,in=120] (out);
+
+      \draw (u1) edge[photon_full] (u2);
+      \draw (d1) edge[photon_full] (d2);
+
+      \draw (u1) edge[electron] (d1);
+      \draw (d2) edge[electron] (u2);
+
+      \draw (d1) edge[electron_full,out=179,in=-60] (in);
+      \draw (out) edge[electron, out=-120,in=1] (d2);
+
+    % Vertices
+    \draw[thick, fill=white] (in) circle (\vertexsize);
+    \draw[thick, fill=white] (out) circle (\vertexsize);
+    \draw[thick, fill=black] (u1) circle (\vertexsize);
+    \draw[thick, fill=black] (d1) circle (\vertexsize);
+    \draw[thick, fill=black] (u2) circle (\vertexsize);
+    \draw[thick, fill=black] (d2) circle (\vertexsize);
+
+  \end{scope}
+  % ------------------
+  \begin{scope}[yshift=\row2dist, xshift=\col2dist]
+    % coordinates
+    \coordinate (in) at (0, 0);
+    \coordinate (out) at (\bubblewidth, 0);
+    \coordinate (u1) at (0.34*\bubblewidth, \bubbletop);
+    \coordinate (d1) at (0.34*\bubblewidth, -\bubbletop);
+    \coordinate (u2) at (0.66*\bubblewidth, \bubbletop);
+    \coordinate (d2) at (0.66*\bubblewidth, -\bubbletop);
+
+    % edges
+
+    \draw (in) edge[electron_full,out=60,in=181] (u1);
+    \draw (out) edge[electron, in=359,out=120] (u2);
+
+    \draw (u1) edge[photon_full] (u2);
+    \draw (d1) edge[photon_full] (d2);
+
+    \draw (u1) edge[electron] (d1);
+    \draw (u2) edge[electron] (d2);
+
+    \draw (d1) edge[electron_full,out=179,in=-60] (in);
+    \draw (d2) edge[electron, out=1,in=-120] (out);
+
+  % Vertices
+  \draw[thick, fill=white] (in) circle (\vertexsize);
+  \draw[thick, fill=white] (out) circle (\vertexsize);
+  \draw[thick, fill=black] (u1) circle (\vertexsize);
+  \draw[thick, fill=black] (d1) circle (\vertexsize);
+  \draw[thick, fill=black] (u2) circle (\vertexsize);
+  \draw[thick, fill=black] (d2) circle (\vertexsize);
+    \end{scope}
+  % ------------------
+  \begin{scope}[yshift=2*\row2dist]
+    % coordinates
+    \coordinate (in) at (0, 0);
+    \coordinate (out) at (\bubblewidth, 0);
+    \coordinate (u1) at (0.34*\bubblewidth, \bubbletop);
+    \coordinate (d1) at (0.34*\bubblewidth, -\bubbletop);
+    \coordinate (u2) at (0.66*\bubblewidth, \bubbletop);
+    \coordinate (d2) at (0.66*\bubblewidth, -\bubbletop);
+
+    % edges
+
+    \draw (in) edge[electron_full,out=60,in=181] (u1);
+    \draw (u2) edge[electron, out=359,in=120] (out);
+
+    \draw (u1) edge[zz] (u2);
+    \draw (d1) edge[zz] (d2);
+
+    \draw (u1) edge[electron] (d1);
+    \draw (d2) edge[electron] (u2);
+
+    \draw (d1) edge[electron_full,out=179,in=-60] (in);
+    \draw (out) edge[electron, in=1,out=-120] (d2);
+
+  % Vertices
+  \draw[thick, fill=white] (in) circle (\vertexsize);
+  \draw[thick, fill=white] (out) circle (\vertexsize);
+  \draw[thick, fill=black] (u1) circle (\vertexsize);
+  \draw[thick, fill=black] (d1) circle (\vertexsize);
+  \draw[thick, fill=black] (u2) circle (\vertexsize);
+  \draw[thick, fill=black] (d2) circle (\vertexsize);
+\end{scope}
+  % ------------------
+  \begin{scope}[yshift=2*\row2dist, xshift=\col2dist]
+    % coordinates
+    \coordinate (in) at (0, 0);
+    \coordinate (out) at (\bubblewidth, 0);
+    \coordinate (u1) at (0.34*\bubblewidth, \bubbletop);
+    \coordinate (d1) at (0.34*\bubblewidth, -\bubbletop);
+    \coordinate (u2) at (0.66*\bubblewidth, \bubbletop);
+    \coordinate (d2) at (0.66*\bubblewidth, -\bubbletop);
+
+    % edges
+
+    \draw (in) edge[electron_full,out=60,in=181] (u1);
+    \draw (out) edge[electron, in=359,out=120] (u2);
+
+    \draw (u1) edge[zz] (u2);
+    \draw (d1) edge[zz] (d2);
+
+    \draw (u1) edge[electron] (d1);
+    \draw (u2) edge[electron] (d2);
+
+    \draw (d1) edge[electron_full,out=179,in=-60] (in);
+    \draw (d2) edge[electron, out=1,in=-120] (out);
+
+  % Vertices
+  \draw[thick, fill=white] (in) circle (\vertexsize);
+  \draw[thick, fill=white] (out) circle (\vertexsize);
+  \draw[thick, fill=black] (u1) circle (\vertexsize);
+  \draw[thick, fill=black] (d1) circle (\vertexsize);
+  \draw[thick, fill=black] (u2) circle (\vertexsize);
+  \draw[thick, fill=black] (d2) circle (\vertexsize);
+\end{scope}
+\begin{scope}[xshift=\plus1, yshift=2.5*\row2dist]
+  \draw (0,0) node {\small VC2};
+\end{scope}
+    \begin{scope}[xshift=\plus1]
+        \draw (0,0) node {$+$};
+    \end{scope}
+    \begin{scope}[xshift=\plus1, yshift=\row2dist]
+        \draw (0,0) node {$+$};
+    \end{scope}
+    \begin{scope}[xshift=\plus1, yshift=2*\row2dist]
+        \draw (0,0) node {$+$};
+    \end{scope}
+\end{tikzpicture}

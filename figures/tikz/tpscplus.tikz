@@ -1,0 +1,51 @@
+% \tikzset{external/force remake}
+\tikzsetnextfilename{tpscplus}
+\begin{tikzpicture}[every node/.style={scale=.35}, node distance = 2cm]
+    \node (debut) [start_stop] {Début};
+
+    \node (TPSC) [pred, below of=debut, text centered] {\nodepart{one}\nodepart{two}\parbox[c][.9cm][c]{1.9cm}{\centering TPSC}\nodepart{three}};
+    \draw [flo_arrow] (debut) -- (TPSC);
+
+    \node (params) [io,left of=TPSC, xshift=-2cm, align=center] {$t_{ij},~U,$\\$T, ~n,~N$};
+    \draw [flo_arrow] (params) -- (TPSC);
+
+    % \node (G1) [process,below of=debut] {$\mathcal{G}^{(1)}$};
+    % \draw [flo_arrow] (debut) -- (G1);
+
+
+    \node (lind) [process, below of=TPSC] {$\chi^{(2)}\propto \mathcal{G}^{(1)}\mathcal{G}^{(2)}$};
+    \draw [flo_arrow_dots] (TPSC) -- (lind);
+
+    \node (U) [process, below of=lind] {$U_\mathrm{sp},~U_\mathrm{ch}, ~\avg{\mathrm{n}_\uparrow \mathrm{n}_\downarrow}$};
+    \draw [flo_arrow] (lind) -- (U);
+
+    % \begin{scope}[on background layer]
+    %     \node (bak1) [fill=SupportColor, inner sep=13mm, minimum height=5.6cm,rounded corners, fit={(G1) (lind) (U)}] {};
+    % \end{scope}
+
+
+    % \node (lvl1) [right of=bak1, xshift=1.5cm, align=center] {Premier niveau\\ d'approximation};
+
+    \node (self) [process, below of=U] {$\Sigma^{(2)}\propto\chi^{(2)}\mathcal{G}^{(1)}$};
+    \draw [flo_arrow_dots] (U) -- (self);
+
+
+    \node (G2) [process, below of=self] {$\mathcal{G}^{(2)}$};
+    \draw [flo_arrow] (self) -- (G2);
+
+    % \begin{scope}[on background layer]
+    %     \node (bak2) [fill=SupportColor, inner sep=13mm,rounded corners, fit={(self) (G2)}] {};
+    % \end{scope}
+
+    % \node (lvl2) [right of=bak2, xshift=1.5cm, align=center] {Deuxième niveau\\ d'approximation};
+
+    \node (conv) [decision, below of=G2, yshift=-.4cm] {Convergée?};
+    \draw [flo_arrow] (G2) -- (conv);
+    \node (newG2) [process, right of=lind, xshift=2.7cm] {$\mathcal{G}^{(2)}_{j+1} = (1-\alpha)\mathcal{G}^{(2)}_j+\alpha\mathcal{G}^{(2)}_{j-1}$};
+    \draw [flo_arrow_dots] (newG2) -- (lind);
+
+    \node (fin) [start_stop, below of=conv, yshift=-.5cm] {Fin};
+    \draw [flo_arrow] (conv) -- (fin) node[pos=0.3, left] {Oui};
+    \draw[->] (conv) -| (newG2) node[pos=0.2, above left] {Non};
+
+\end{tikzpicture}
