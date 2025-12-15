@@ -28,3 +28,5 @@ Consult `LICENSE.md`
 - Adapt dagger symbol to be less ugly
 - Clean up comments and structure
 - Organize and partition `MAIN.tex`
+- Make a .latexmkrc
+- Make section line ever so slightly heavier
