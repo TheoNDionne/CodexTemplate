@@ -3,7 +3,7 @@
 # --------- #
 
 # Directory for auxiliary files (log, aux, toc, etc.)
-$aux_dir = 'build';
+$aux_dir = 'buildfiles';
 
 # Build
 $aux_dir_for_pdf = 0;        # directory for pdf
