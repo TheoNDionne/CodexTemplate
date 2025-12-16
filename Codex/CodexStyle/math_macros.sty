@@ -91,3 +91,74 @@
 % Commentaires et rédactions -----------------------
 \newcommand{\red}[1]{{\color{red}#1}}
 % \newcommand{\comment}[1]{\marginpar{\parbox[b]{\marginparwidth}{\color{red}#1}}}
+
+%%% Boxes
+
+% Names for theorem box type environments
+\addto\captionsfrench{\def\theoremname{Théorème}}
+\addto\captionsenglish{\def\theoremname{Theorem}}
+
+\addto\captionsfrench{\def\definitionname{Définition}}
+\addto\captionsenglish{\def\definitionname{Definition}}
+
+\addto\captionsfrench{\def\corollaryname{Corollaire}}
+\addto\captionsenglish{\def\corollaryname{Corollary}}
+
+\addto\captionsfrench{\def\examplename{Exemple}}
+\addto\captionsenglish{\def\examplename{Example}}
+
+\addto\captionsfrench{\def\lemmaname{Lemme}}
+\addto\captionsenglish{\def\lemmaname{Lemma}}
+
+%%% Colored boxes
+
+\setlength{\fboxrule}{1pt} % sets the border width globally (or locally in a group)
+\setlength{\fboxsep}{4pt}  % sets padding between frame and content
+
+% Robust color boxes that can be used even within aligns
+\makeatletter
+\newcommand{\cboxed}[1]{%
+  \mathchoice
+    {\fcolorbox{MainColor}{MainColor!5}{$\displaystyle #1$}}
+    {\fcolorbox{MainColor}{MainColor!5}{$\textstyle #1$}}
+    {\fcolorbox{MainColor}{MainColor!5}{$\scriptstyle #1$}}
+    {\fcolorbox{MainColor}{MainColor!5}{$\scriptscriptstyle #1$}}%
+}
+\makeatother
+
+%-----------------------------%
+% Define a reusable box style %
+%-----------------------------%
+
+\tcbset{
+mytheoremstyle/.style={
+    fonttitle=\bfseries\upshape, % bold upright title
+    fontupper=\upshape, % upright body font
+    arc=0mm, % sharpish corner
+    colback=MainColor!5, % color of the background
+    colframe=MainColor, % color of the frame
+    width=\linewidth, % width of the box
+    boxrule=0.5mm,
+    top=1mm,
+    bottom=1mm,
+    left=2mm,
+    right=2mm,
+    enhanced
+}
+}
+
+% Defining the boxes
+\newtcbtheorem[auto counter,number within=chapter]{theorembox}%
+    {\theoremname}{mytheoremstyle}{theorem}
+
+\newtcbtheorem[auto counter,number within=chapter]{definitionbox}%
+    {\definitionname}{mytheoremstyle}{definition}
+
+\newtcbtheorem[auto counter,number within=chapter]{corollarybox}%
+    {\corollaryname}{mytheoremstyle}{corollary}
+
+\newtcbtheorem[auto counter,number within=chapter]{examplebox}%
+    {\examplename}{mytheoremstyle}{example}
+
+\newtcbtheorem[auto counter,number within=chapter]{lemmabox}%
+    {\lemmaname}{mytheoremstyle}{lemma}

@@ -40,8 +40,7 @@ Consult `LICENSE.md`
 #### *Priority*
 
 - Rethink the structure of the preambles for the least possible brain fuckery.
-- Move the colored boxes into the math_macros section.
-- Make a dedicated language section where Babel is imported and things happen [must be before the macros then.]
+- Comment math macros
 
 #### *Backburner*
 
