@@ -27,5 +27,6 @@ Consult `LICENSE.md`
 - Clean up comments and structure
 - Organize and partition `MAIN.tex`
 - Make a .latexmkrc
-- Make boxed equation match section line weight and color (rip off TeX-JAM)
+- Make boxed equation
+- Make theorem / [definition] environment
 - Explore definition boxes?
