@@ -1,6 +1,6 @@
-# Codex: A minimal template for typesetting longform documents in latex
+# **Codex: A minimal template for typesetting longform documents in latex**
 
-## Description
+## ***Description***
 
 This repository contains a latex template is meant for those that wish to typeset a longform document (thesis, memoir *etc*). This template takes its roots in a template produced by Prof. David Sénéchal (2013) and was more recently modified into its current form by my dear friend Jérôme Leblanc (2025).
 
@@ -11,7 +11,7 @@ In summary, my main contributions are:
 - Flexible colored boxes (both in math mode and "theorem" boxes)
 - More math macros and minor fixes
 
-## Basic usage
+## ***Basic usage***
 
 Copy the `Codex` repository that actually contains the template and you should be good to go! A couple basic commands are given below.
 
@@ -23,24 +23,24 @@ Go to `./Codex/` and run `latexmk`. Compilation should automatically proceed by 
 
 Still in `./Codex/`, run `latexmk -c` and the cleanup should also proceed automagically. For nuclear cleanup `rm -r build/`.
 
-## Contents & structure
+## ***Contents & structure***
 
 **Coming eventually**
 
-## License
+## ***License***
 
 Consult `LICENSE.md`
 
 ## *Todo*
+- Grand name uniformization tour
 - Write the contents and structure
-- Clean up comments and structure of preamble chain
 - Organize and partition `MAIN.tex`
-
 
 #### *Priority*
 
-- Rethink the structure of the preambles for the least possible brain fuckery.
 - Comment math macros
+- Order and comment in layout.sty
+- Make sure everything is language supported
 
 #### *Backburner*
 
@@ -48,3 +48,7 @@ Consult `LICENSE.md`
 - Figure out what I want to do for tikz and pgfplots.
 - Update subcaption.
 - Add back in pdfx as a tourdeforce
+
+## ***Coming next***
+
+The short form version of this template! (once all except backburner is done)
