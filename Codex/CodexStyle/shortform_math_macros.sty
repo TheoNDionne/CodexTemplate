@@ -135,7 +135,7 @@ mytheoremstyle/.style={
     colback=MainColor!2, % color of the background
     colframe=MainColor, % color of the frame
     width=\linewidth, % width of the box
-    boxrule=0.5mm,
+    boxrule=1pt,
     top=1mm,
     bottom=1mm,
     left=2mm,
@@ -147,17 +147,17 @@ mytheoremstyle/.style={
 % SOME GLOBAL PARAMETER MUST BE DEFINED HERE
 
 % Defining the boxes
-\newtcbtheorem[auto counter,number within=section]{theorembox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{theorembox}%
     {\theoremname}{mytheoremstyle}{theorem}
 
-\newtcbtheorem[auto counter,number within=section]{definitionbox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{definitionbox}%
     {\definitionname}{mytheoremstyle}{definition}
 
-\newtcbtheorem[auto counter,number within=section]{corollarybox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{corollarybox}%
     {\corollaryname}{mytheoremstyle}{corollary}
 
-\newtcbtheorem[auto counter,number within=section]{examplebox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{examplebox}%
     {\examplename}{mytheoremstyle}{example}
 
-\newtcbtheorem[auto counter,number within=section]{lemmabox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{lemmabox}%
     {\lemmaname}{mytheoremstyle}{lemma}

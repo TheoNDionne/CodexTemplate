@@ -59,7 +59,19 @@ labelsep  = space
 }
 
 %---------------CodexStyle layout---------------
-\usepackage{CodexStyle/theme/shortform_layout} % TODO this is where there should be a switch when it comes to long/short (watch out for boxes)
+% Switches between longform and shortform automatically
+\makeatletter
+\@ifclassloaded{book}{
+    \usepackage{CodexStyle/theme/layout} % load longform
+}{
+\@ifclassloaded{article}{
+    \usepackage{CodexStyle/theme/shortform_layout} % load shortform
+}{
+    \PackageError{mydoc}
+        {Unsupported document class!}
+        {`book` -> longform, `article` -> shortform}
+}}
+\makeatother
 
 %------------------Math Setup-------------------
 \usepackage{amsmath}          % math environments
@@ -140,5 +152,6 @@ Scale = MatchUppercase % set scale (only need uppercases)
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
+%&&&&&&&&&&&&&&&&&&&& We'll see what we do with this...
 \usepackage{CodexStyle/theme/tikzstyles}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
