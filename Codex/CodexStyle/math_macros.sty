@@ -60,10 +60,10 @@
 
 % Derivatives -----------------------
 \newcommand{\D}{\symup{d}} % Differential 'd'.
-\newcommandx{\dd}[3][1={},3={}]{\frac{\D^{#3}\! #1}{\D #2^{#3}}} % Total derivative according to #2, #1 is the function and #3 is the order.
+\newcommandx{\dd}[3][1={},3={}]{\frac{\D^{#3} #1}{\D #2^{#3}}} % Total derivative according to #2, #1 is the function and #3 is the order.
 \newcommand{\del}{\partial} % Partial 'd'.
-\newcommandx{\ddp}[3][1={},3={}]{\frac{\del^{#3}\! #1}{\del #2^{#3}}} % Dérivée partielle selon #2, #1 est la fonction est #3 est l'ordre.
-\newcommandx{\ddf}[3][1={},3={}]{\frac{\delta^{#3}\! #1}{\delta #2^{#3}}} % Dérivée partielle selon #2, #1 est la fonction est #3 est l'ordre.
+\newcommandx{\ddp}[3][1={},3={}]{\frac{\del^{#3} #1}{\del #2^{#3}}} % Dérivée partielle selon #2, #1 est la fonction est #3 est l'ordre.
+\newcommandx{\ddf}[3][1={},3={}]{\frac{\delta^{#3} #1}{\delta #2^{#3}}} % Dérivée partielle selon #2, #1 est la fonction est #3 est l'ordre.
 \newcommand{\eval}[1]{\left. {#1} \right|} % Bar on the right of expression.
 \newcommand{\delbar}{\slashed{\del}} % Partial Inexact differential.
 \newcommand{\dbar}{\dj}% Inexact differential.
@@ -135,7 +135,7 @@ mytheoremstyle/.style={
     colback=MainColor!2, % color of the background
     colframe=MainColor, % color of the frame
     width=\linewidth, % width of the box
-    boxrule=0.5mm,
+    boxrule=1pt,
     top=1mm,
     bottom=1mm,
     left=2mm,
@@ -145,17 +145,17 @@ mytheoremstyle/.style={
 }
 
 % Defining the boxes
-\newtcbtheorem[auto counter,number within=chapter]{theorembox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{theorembox}%
     {\theoremname}{mytheoremstyle}{theorem}
 
-\newtcbtheorem[auto counter,number within=chapter]{definitionbox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{definitionbox}%
     {\definitionname}{mytheoremstyle}{definition}
 
-\newtcbtheorem[auto counter,number within=chapter]{corollarybox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{corollarybox}%
     {\corollaryname}{mytheoremstyle}{corollary}
 
-\newtcbtheorem[auto counter,number within=chapter]{examplebox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{examplebox}%
     {\examplename}{mytheoremstyle}{example}
 
-\newtcbtheorem[auto counter,number within=chapter]{lemmabox}%
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{lemmabox}%
     {\lemmaname}{mytheoremstyle}{lemma}
