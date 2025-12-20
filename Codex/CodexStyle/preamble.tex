@@ -34,15 +34,13 @@ labelsep  = space
 \usepackage{csquotes}        % For quotes
 % \newcommand\itsym{$\bullet$} % symbole pour les listes
 
-\usepackage{hyperref}
-% Pass hyperref options before loading pdfx
-\PassOptionsToPackage{
-    backref=page,
-    pagebackref=true,
-    hyperindex=true,
-    bookmarks=true,
+\usepackage{hyperref}[
+    backref     = page,
+    pagebackref = true,
+    hyperindex  = true,
+    bookmarks   = true,
     pdfa
-}{hyperref}
+]
 
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 % \usepackage[a-2b,mathxmp]{pdfx}[2018/12/22] % ???
@@ -62,7 +60,7 @@ labelsep  = space
 % Switches between longform and shortform automatically
 \makeatletter
 \@ifclassloaded{book}{
-    \usepackage{CodexStyle/theme/longform_layout} % load longform @@@@@@@@@@@@@@@@@@ RENAME
+    \usepackage{CodexStyle/theme/longform_layout} % load longform
 }{
 \@ifclassloaded{article}{
     \usepackage{CodexStyle/theme/shortform_layout} % load shortform
@@ -87,33 +85,39 @@ labelsep  = space
 %%% Import custom math macros
 \usepackage{CodexStyle/math_macros} % custom latex macros (macros.sty)
 
-%------------Fonts (Body and math)--------------
+%------------Fonts (Body and Math)--------------
 \usepackage{fontspec} % Finer font selection (requires Lua/XeLaTeX)
 \usepackage{unicode-math} % Finer math font selection
 
-%%% Main font (EB Garamond)
-\setmainfont{EB Garamond}[
-  Ligatures   = TeX, % ligatures
-  OpticalSize = On, % optical weight adjustment
-  % Numbers     = OldStyle, % can be a little hard to read
-  SmallCapsFeatures = {LetterSpace=5} % Adds spaces for small caps
-]
+%%% Main font switches based on documentclass
+\makeatletter
+\@ifclassloaded{book}{
+    \setmainfont{EB Garamond}[ % EB Garamond
+        Ligatures   = TeX, % ligatures
+        OpticalSize = On, % optical weight adjustment
+        % Numbers     = OldStyle, % can be a little hard to read
+        SmallCapsFeatures = {LetterSpace=5} % Adds spaces for small caps
+    ]
+}{
+\@ifclassloaded{article}{
+    \setmainfont{Libertinus Serif}[ % Libertinus in short documents
+        Ligatures = TeX,
+        Kerning   = On,
+    ]
+}{
+    \PackageError{mydoc}
+        {Unsupported document class!}
+        {`book` -> longform, `article` -> shortform}
+}}
+\makeatother
 
 %%% Math fonts (Libertinus and Latin Modern)
-\setmathfont{Libertinus Math}[ % nice neutral universal math font
+\setmathfont{Libertinus Math}[ % nice neutral (near) universal math font
     Scale=MatchLowercase % set scale
 ]
-\setmathfont{Latin Modern Math}[ % setting daggers
-    range = {\dagger, \ddagger}, % less dramatic daggers
+\setmathfont{Latin Modern Math}[ % A few swaps and additions
+    range = {\dagger, \ddagger, \mathcal}, % less dramatic daggers and distinct mathcal
     Scale=MatchLowercase % set scale
-]
-\setmathfont{STIX Two Math}[ % mathcal
-range = {\mathcal}, % getting a sober mathcal
-Scale = MatchUppercase % set scale (only need uppercases)
-]
-\setmathfont{TeX Gyre Termes Math}[ % mathscr
-range = {\mathscr}, % nice curly mathscr
-Scale = MatchUppercase % set scale (only need uppercases)
 ]
 
 %--------------------Tables---------------------
