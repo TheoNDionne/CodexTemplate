@@ -13,6 +13,7 @@
 
 \input{CodexStyle/preamble.tex}
 
+
 \begin{document}
 
 %-------------------------------------------------------------------------------
@@ -212,6 +213,22 @@ Here is some text in between thus showing that the spacing is correct.
 	    \Int[a][b] f(x)\,\D{x} = F(b) - F(a)
 	}}
 \end{definitionbox}
+
+\al{
+    \ddf[\mathcal{L}]{q} &= \frac{\delta\mathcal{L}}{\delta q}\\
+    \ddf[\mathscr{L}]{q}[2] &= \frac{\delta^2\!\mathscr{L}}{\delta q^2}\\
+    \ddf[\mathcal{L}]{\hat{q}} &= \frac{\delta\mathcal{L}}{\delta\hat{q}}
+}
+And looking at operators
+\al{
+    \operatorname{Tr}\ma{A} &= \Tr{\ma{A}}\\
+    qq &= \hat{q}\hat{q} \to \Exp{-\alpha x}
+}
+while
+\al{
+    \real{z} &= \frac{z + z^*}{2}\\
+    \imag{z} &= \frac{z - z^*}{2i}
+}
 
 % facultatif: introduction non numérotée
 % \addcontentsline{toc}{chapter}{Introduction} % Add in the intro to the TOC

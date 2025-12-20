@@ -31,7 +31,7 @@
 \newcommand{\ve}[1]{\symbf{#1}} % Upright bold face
 \newcommand{\vu}[1]{\hat{\ve{#1}}} % Hat vector upright bold face
 \newcommand{\tens}{\otimes} % Tensor product
-\newcommand{\nablav}{\bm{\nabla}} % Bold gradient
+\newcommand{\nablav}{\symbf{\nabla}} % Bold gradient
 
 
 % Trig. functions with automatic formating  -----------------------
@@ -75,8 +75,8 @@
 \newcommandx{\Int}[2][1={},2={}]{\int_{#1}^{#2}} % Faster bounded integrals.
 
 % Complex numbers -----------------------
-\renewcommand{\Re}[1]{\operatorname{Re}\acc{#1}} % Re{#}
-\renewcommand{\Im}[1]{\operatorname{Im}\acc{#1}} % Im{#}
+\newcommand{\real}[1]{\operatorname{Re}\acc{#1}} % Re{#}
+\newcommand{\imag}[1]{\operatorname{Im}\acc{#1}} % Im{#}
 
 
 % Constants and physical symbols -----------------------
