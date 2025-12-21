@@ -44,16 +44,11 @@ Consult `LICENSE.md`
 
 #### *Priority*
 
-- Merge macros from the examprep and the tight bibliographyfix
 - Move examples into a separate section (requires directory awareness I think)
-- Make a crispy template-ish MAIN.tex that can be compiled and easily switched.
-
 
 - Crisp up `math_macros.sty`
 - Crisp up both layout documents
 - Crisp up colorscheme document
-- Modularize font choices?
-- Make sure everything is language supported
 
 #### *Backburner*
 
