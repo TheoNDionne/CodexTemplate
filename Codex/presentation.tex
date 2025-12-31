@@ -2,8 +2,8 @@
 \input{CodexStyle/preamble.tex}
 
 \title[Short title]
-{A long title that can span multiple pages and is kind of drawn out and mostly unnecessary}
-
+{A sample presentation}
+\subtitle{With ramblings from a madman}
 \author{Théo N. Dionne}
 
 \institute[]{
@@ -22,15 +22,22 @@
 
 \begin{document}
 
-\frame{\titlepage}
+\begingroup\setbeamertemplate{navigation symbols}{}
 
-\begin{frame}\frametitle{Table of contents}
+\begin{frame}[noframenumbering]
+	\titlepage
+\end{frame}
+
+
+\begin{frame}[noframenumbering]\frametitle{Table of contents}
     \tableofcontents
 \end{frame}
 
+\endgroup
+
 \begin{frame}
 \frametitle{Title}
-The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog \cite{hubbardI}.
 \pause
 \al{\cboxed{
     i\hbar\del_t\ket{\Psi} = \op{H}\ket{\Psi}
@@ -67,8 +74,54 @@ The quick brown fox jumps over the lazy dog.
     This is the fundamental theorem of calculus:
     \al{
         \int_{a}^{b}f(t)\,\D{t} = F(b) - F(a)
-    }
+    }\pause
+    Notice:
+    \begin{itemize}
+        \item thing to say;\pause
+        \item another thing to say;\pause
+        \item consider $\ve{F} = m\ddot{\ve{x}}$.
+    \end{itemize}
     \end{cbox}
+\end{frame}
+
+\begin{frame}\frametitle{A simple derivation}
+    Extremization of the action entails:
+    \begin{equation}
+    \begin{aligned}
+        \cboxed{0 = \delta\mathcal{S}} &= \int_{t_i}^{t_f}\D{t}\,\delta\mathcal{L}\pause\\
+        &= \int_{t_i}^{t_f}\D{t}\cro{\ddf[\mathcal{L}]{q}\delta{q} + \ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}}\delta\mspace{1.5mu}\dot{q}}\pause\\
+        &= \int_{t_i}^{t_f}\D{t}\cro{\ddf[\mathcal{L}]{q} - \dd{t}\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}}}\delta{q} + \underbrace{\int_{t_i}^{t_f}\D{t}\dd{t}\p{\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}}\delta{q}}}_{\text{vanishes (B.C.s)}}\pause\\
+        &\Rightarrow \cboxed{\ddf[\mathcal{L}]{q} - \dd{t}\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}} = 0}\pause
+    \end{aligned}
+    \end{equation}
+    The converse is equally true, hence:\pause
+    \al{\highlightcboxed{
+        \delta\mathcal{S} = 0 \text{ \& B.C.s} \Longleftrightarrow \ddf[\mathcal{L}]{q} - \dd{t}\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}} = 0
+    }}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\vfill\vspace{1em}
+		    \Huge \sffamily \bfseries \color{MainColor} Questions (2 minutes)
+		\vfill
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{beamercolorbox}[sep=1em, center]{frametitle}
+  {\usebeamerfont{title}Thank You!}
+\end{beamercolorbox}
+\end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]\frametitle{Bibliography}
+\singlespacing
+\nocite{*} % Shows all references regardless of if cited
+\bibliographystyle{CodexStyle/bibstyles/nature-fr} % Use "nature" for english version
+% \addcontentsline{toc}{chapter}{Bibliographie} % Add bibliography
+\bibliography{These}
 \end{frame}
 
 \end{document}

@@ -126,6 +126,16 @@
 }
 \makeatother
 
+\makeatletter
+\newcommand{\highlightcboxed}[1]{%
+  \mathchoice
+    {\fcolorbox{HighlightColor}{HighlightColor!2}{$\displaystyle #1$}}
+    {\fcolorbox{HighlightColor}{HighlightColor!2}{$\textstyle #1$}}
+    {\fcolorbox{HighlightColor}{HighlightColor!2}{$\scriptstyle #1$}}
+    {\fcolorbox{HighlightColor}{HighlightColor!2}{$\scriptscriptstyle #1$}}%
+}
+\makeatother
+
 %-----------------------------%
 % Define a reusable box style %
 %-----------------------------%

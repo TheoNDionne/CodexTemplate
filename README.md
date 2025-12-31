@@ -48,7 +48,7 @@ GNU GPL v3 (as included).
 
 #### *Beamer*
 
-- Tighten up itemize... looks a bit wonky.
+- Fix bibliography... a little bit fucked...
 
 #### *Backburner*
 

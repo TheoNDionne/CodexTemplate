@@ -1,4 +1,5 @@
 \usetheme{default}
+\usefonttheme{serif}
 
 %------------Box dimensions----------------
 
@@ -7,9 +8,6 @@
 
 %-----setup frames
 
-\usefonttheme{serif}
-
-\setbeamerfont{title}{family=\sffamily, series=\bfseries}
 \setbeamerfont{frametitle}{family=\sffamily, series=\bfseries}
 \setbeamerfont{normal text}{family=\rmfamily}
 
@@ -46,9 +44,15 @@
 \vspace{0.25em}\hspace{2em}{\color{MainColor}\raise0pt\hbox{\rule[0.5ex]{0.9ex}{0.6ex}\small\raise1.55pt\hbox{$\!{\blacktriangleright}$}~\inserttocsubsection}}\par}
 
 
-% Setting color for title and subtitle in title page
+%---------------Title settings-----------------
+% title
 \setbeamercolor{title}{fg=white, bg=MainColor}
+\setbeamerfont{title}{family=\sffamily, series=\bfseries}
+
+% subtitle
 \setbeamercolor{subtitle}{fg=white, bg=MainColor}
+\setbeamerfont{subtitle}{family=\rmfamily, series=\itshape, size=\small}
+
 
 % itemize stuff
 \defbeamertemplate{itemize item}{compoundarrow}{\raise0pt\hbox{\rule[0.5ex]{0.9ex}{0.6ex}\small\raise1.55pt\hbox{$\!{\blacktriangleright}$}}}
