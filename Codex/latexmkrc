@@ -6,7 +6,7 @@
 $lualatex = 'lualatex -interaction=nonstopmode -synctex=1 %O %S';
 $pdf_mode = 4;
 
-# Put ONLY auxiliary files here
+# Auxiliary files here
 $aux_dir = 'out';
 
 # Clean junk

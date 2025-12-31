@@ -9,14 +9,15 @@
 %!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%
 %                 Control Panel                 %
 %!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%
-
+%
 \newcommand{\CodexLanguage}{french} % set language
 \newcommand{\CodexColorTheme}{CodexStyle/colorthemes/colors_marine} % set colortheme (path to desired .sty)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                Language Support               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[\CodexLanguage]{babel} % language support priority language last
+
+\usepackage[\CodexLanguage]{babel} % language support priority language last (set in control panel)
 
 %%% French renamings
 \addto\captionsfrench{\renewcommand\frenchtablename{{\FBfigtabshape Tableau}}} % rename table name (french)
@@ -25,32 +26,33 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                    Colors                     %
+%                     Colors                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage[x11names]{xcolor} % adds in typical color features
+\usepackage{\CodexColorTheme} % choose a style (set in control panel)
 
-%%% Choose color theme
-\usepackage{\CodexColorTheme} % choose a style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               General Packages                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%---------------General packages----------------
-\usepackage{setspace}        % line spacing
-\usepackage{cite}            % in text citations
-\usepackage{microtype}       % small typography tweaks
-\usepackage{graphicx}		 % figure insertion
-\usepackage{subfig}			 % allows for subfigures MIGRATE TO A MODERN PACKAGE MAYBE
-\usepackage{geometry}		 % document geometry
-\usepackage{fancybox}		 % boxes, frames etc
-\usepackage{url}             % typographically sound URLs
-\usepackage{float}           % Fixes hacky geometry problems
+\usepackage{setspace}  % line spacing
+\usepackage{cite}      % in text citations
+\usepackage{microtype} % small typography tweaks
+\usepackage{graphicx}  % figure insertion
+\usepackage{subfig}	   % allows for subfigures MIGRATE TO A MODERN PACKAGE MAYBE
+\usepackage{geometry}  % document geometry
+\usepackage{fancybox}  % boxes, frames etc
+\usepackage{url}       % typographically sound URLs
+\usepackage{float}     % Fixes hacky geometry problems
 \usepackage[
 format    = hang,
 margin    = 5mm,
 font      = small,
 labelfont = bf,
 labelsep  = space
-]{caption}                   % tweak caption layout and format
-\usepackage{csquotes}        % For quotes
-% \newcommand\itsym{$\bullet$} % symbole pour les listes
+]{caption}             % tweak caption layout and format
+\usepackage{csquotes}  % For quotes
 
 \usepackage{hyperref}[
     backref     = page,
@@ -74,7 +76,9 @@ labelsep  = space
     bookmarksopen=true,      % ouvre les signets PDF au départ
 }
 
-%---------------CodexStyle layout---------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  Codex Layout                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Switches between longform and shortform automatically
 \makeatletter
 \@ifclassloaded{book}{ %%% BOOK %%%
