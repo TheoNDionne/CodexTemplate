@@ -1,9 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                                                                     %
-%                                                      PREAMBLE.STY                                                   %
-%                                                                                                                     %
-%                                                                                                                     %
-%                                                                                                                     %
+%
+%                                                      PREAMBLE.STY
+%
+% Elements configured here:
+%
+%       -> Control panel (high level control)
+%       -> Language Support
+%       -> Colors (switches between different color themes) [/CodexStyle/colorthemes/...]
+%       -> General Packages
+%       -> Document Layout (switches between different layouts) [/CodexStyle/layouts/...]
+%       -> Math Setup (math packages)
+%       -> Fonts (Body)
+%       -> Fonts (Math)
+%       -> Tables
+%       -> Graphical Setup (tikz pgfplots)
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%!%
@@ -77,8 +88,9 @@ labelsep  = space
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                  Codex Layout                 %
+%                 Document Layout               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Switches between longform and shortform automatically
 \makeatletter
 \@ifclassloaded{book}{ %%% BOOK %%%
@@ -96,7 +108,10 @@ labelsep  = space
 }}}
 \makeatother
 
-%------------------Math Setup-------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   Math Setup                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{amsmath}          % math environments
 \usepackage{mathtools}        % tools for math formating
 \usepackage[nice]{nicefrac}   % nicer fractions
@@ -111,12 +126,13 @@ labelsep  = space
 \usepackage{CodexStyle/macros} % custom latex macros (macros.sty)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%------------Fonts (Body and Math)--------------%
+%                  Fonts (Body)                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{fontspec} % Finer font selection (requires Lua/XeLaTeX)
 \usepackage{unicode-math} % Finer math font selection
 
-%%% Main font switches based on documentclass
+% Main font switches based on documentclass
 \makeatletter
 \@ifclassloaded{book}{ %%% BOOK %%%
     \setmainfont{EB Garamond}[ % EB Garamond
@@ -139,15 +155,16 @@ labelsep  = space
     ]
     \setsansfont{Libertinus Sans}
 }{ %%% ELSE %%%
-    \PackageError{mydoc}
+    \PackageError{mydoc} % throws an error
         {Unsupported document class!}
         {`book` -> longform, `article` -> shortform, `beamer` -> presentation}
 }}}
 \makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%---------Math fonts---------%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  Fonts (Math)                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setmathfont{Libertinus Math}[ % nice neutral (near) universal math font
     Scale=MatchLowercase % set scale
 ]
@@ -156,7 +173,10 @@ labelsep  = space
     Scale=MatchLowercase % set scale
 ]
 
-%--------------------Tables---------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                     Tables                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{array} % tabular functions
 \usepackage{dcolumn} % allows for aligning of values wrt to the decimal
 \newcolumntype{C}{>{$\displaystyle}c<{$}} % centered math column
@@ -166,7 +186,10 @@ labelsep  = space
 
 %%% UNDER CONSTRUCTION %%%
 %-----------------------------------------------
-% Figures TiKz !!!TODO FIX THIS!!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 Graphical Setup               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{tikz}
 \usetikzlibrary{
 	calc,
