@@ -138,6 +138,9 @@
 \addto\captionsfrench{\def\lemmaname{Lemme}}
 \addto\captionsenglish{\def\lemmaname{Lemma}}
 
+\addto\captionsfrench{\def\axiomname{Axiome}}
+\addto\captionsenglish{\def\axiomname{Axiom}}
+
 
 % Math boxes -----------------------
 \makeatletter
@@ -225,6 +228,9 @@ unnamedhighlightstyle/.style={
 
 \newtcbtheorem[auto counter,number within=\boxesnumberwithin]{lemmabox}%
     {\lemmaname}{namedcolorstyle}{lemma}
+
+\newtcbtheorem[auto counter,number within=\boxesnumberwithin]{axiombox}%
+    {\axiomname}{namedcolorstyle}{axiom}
 
 % unnamed
 \newtcolorbox{cbox}{
