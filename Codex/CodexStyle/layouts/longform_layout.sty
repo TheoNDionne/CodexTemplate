@@ -5,7 +5,12 @@
 \pagestyle{scrheadings}
 \renewcommand{\chaptermark}[1]{\markboth{{\thechapter. #1}}{}}
 \renewcommand{\sectionmark}[1]{}
-\newcommand\chapterstring{Chapitre}
+\addto\captionsenglish{%
+  \newcommand\chapterstring{Chapter}%
+}
+\addto\captionsfrench{%
+  \newcommand\chapterstring{Chapitre}%
+}
 \usepackage{titlesec}
 
 %------------Chapters and Sections--------------
