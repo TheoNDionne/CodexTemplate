@@ -11,11 +11,11 @@ The main philosophy of this project is to provide a versatile template with mini
 
 ## **Basic usage**
 
-Copy the `Codex` repository that actually contains the template and you should be good to go! A couple basic commands are given below.
+Copy the `Codex/` repository that actually contains the template and you should be good to go! A couple basic commands are given below.
 
 #### ***Compilation***
 
-Go to `Codex/` and run `latexmk`. Compilation should automatically proceed by reading the `latexmkrc` file. If you have many `.tex` files in `Codex/`, the addition of a target will clear all ambiguity (e.g. `latexmk MAIN.tex`)
+Go to `Codex/` and run `latexmk`. Compilation should automatically proceed by reading the `latexmkrc` file. If you have many `.tex` files in `Codex/`, the addition of a target will clear any ambiguity (e.g. `latexmk MAIN.tex`)
 
 #### ***Cleaning***
 
@@ -23,9 +23,7 @@ Still in `Codex/`, run `latexmk -C` and the cleanup should also proceed automagi
 
 ## **Contents & structure**
 
-**Coming eventually ...**
-
-
+*Coming soon*
 
 ------------------------------------------------
 ## ***Geneology & Credits***
