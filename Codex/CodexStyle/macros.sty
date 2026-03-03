@@ -237,6 +237,23 @@ unnamedhighlightstyle/.style={
   unnamedcolorstyle
 }
 
+% unnamed highlight
 \newtcolorbox{highlightcbox}{
   unnamedhighlightstyle
+}
+
+% Add inline text box that matches main color
+\newcommand{\inlinecbox}[1]{%
+  \tcbox[
+    on line,
+    arc=0mm,
+    colback=MainColor!2,
+    colframe=MainColor,
+    boxrule=1pt,
+    top=0mm,
+    bottom=0mm,
+    left=0mm,
+    right=0mm,
+    enhanced
+  ]{#1}%
 }
