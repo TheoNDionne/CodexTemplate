@@ -5,15 +5,20 @@
 \pagestyle{scrheadings}
 \renewcommand{\chaptermark}[1]{\markboth{{\thechapter. #1}}{}}
 \renewcommand{\sectionmark}[1]{}
-\addto\captionsenglish{%
-  \renewcommand{\chaptername}{Chapter}%
-}
-\addto\captionsfrench{%
-  \renewcommand{\chaptername}{Chapitre}%
-}
 \usepackage{titlesec}
 
 %------------Chapters and Sections--------------
+
+% define once
+\newcommand{\chapterstring}{\chaptername}
+
+% language-dependent overrides
+\addto\captionsenglish{%
+  \renewcommand{\chapterstring}{Chapter}%
+}
+\addto\captionsfrench{%
+  \renewcommand{\chapterstring}{Chapitre}%
+}
 
 %%% Chapters
 \titleformat{\chapter}[display] {\bfseries\color{MainColor}} {\filright
