@@ -34,9 +34,9 @@
 
 % French renamings ------------------------------
 \addto\captionsfrench{\renewcommand\frenchtablename{{\FBfigtabshape Tableau}}} % rename table name (french)
-\addto\captionsfrench{%
-  \renewcommand{\refname}{Bibliographie}%
-}
+% \addto\captionsfrench{%
+%   \renewcommand{\refname}{Bibliographie}%
+% }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,7 +52,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{setspace}  % line spacing
-\usepackage{cite}      % in text citations
 % \usepackage{microtype} % small typography tweaks
 \usepackage{graphicx}  % figure insertion
 \usepackage{subfig}	   % allows for subfigures MIGRATE TO A MODERN PACKAGE MAYBE
@@ -69,17 +68,16 @@ labelsep  = space
 ]{caption}             % tweak caption layout and format
 \usepackage{csquotes}  % For quotes
 \usepackage{hyperref}[ % hyperref with some setup
-    backref     = page,
-    pagebackref = true,
     hyperindex  = true,
     bookmarks   = true,
     pdfa
 ]
-
-% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-% \usepackage[a-2b,mathxmp]{pdfx}[2018/12/22] % ???
-% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+\usepackage[
+    backend  = biber,
+    style    = nature,
+    sorting  = none,
+    backref  = true
+]{biblatex}
 % more hyperref options
 \hypersetup{
     colorlinks=true,         % colorize links

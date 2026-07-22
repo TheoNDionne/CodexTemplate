@@ -1,6 +1,5 @@
 \documentclass{beamer}
 
-
 \input{CodexStyle/preamble.tex}
 
 \title[Short title]
@@ -21,6 +20,8 @@
     \hspace{1cm}
     \includegraphics[width=4cm]{./figures/logos/IQ_logo_h_noir_cropped.pdf}
 }
+
+\addbibresource{These.bib}
 
 \begin{document}
 
@@ -136,9 +137,7 @@ The quick brown fox jumps over the lazy dog \cite{hubbardI}.
 \begin{frame}[allowframebreaks]\frametitle{Bibliography}
 \singlespacing
 \nocite{*} % Shows all references regardless of if cited
-\bibliographystyle{CodexStyle/bibstyles/nature-fr} % Use "nature" for english version
-% \addcontentsline{toc}{chapter}{Bibliographie} % Add bibliography
-\bibliography{These}
+\printbibliography
 \end{frame}
 
 \end{document}

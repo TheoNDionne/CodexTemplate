@@ -13,6 +13,7 @@
 
 \input{CodexStyle/preamble.tex}
 
+\addbibresource{These.bib} % add in bib for biblatex
 
 \begin{document}
 
@@ -253,6 +254,7 @@ Testing the new braket notation:
 \eqn{
     &\ket{\psi} & &\bra{\psi} & &\braket{\phi}{\psi} & &\ketbra{\phi}{\psi}
 }
+\cite{hubbardI}
 
 % facultatif: introduction non numérotée
 % \addcontentsline{toc}{chapter}{Introduction} % Add in the intro to the TOC
@@ -286,10 +288,7 @@ Testing the new braket notation:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \singlespacing
-\nocite{*} % Shows all references regardless of if cited directly (this is a bibliography)
-\bibliographystyle{CodexStyle/bibstyles/nature-fr} % Use "nature" for english version
-\addcontentsline{toc}{section}{Bibliographie} % Add bibliography
-\bibliography{These}
+\printbibliography[title=Bibliographie]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SO LONG SPACE COWBOY...

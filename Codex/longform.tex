@@ -13,6 +13,8 @@
 
 \input{CodexStyle/preamble.tex} % should just autowork...
 
+\addbibresource{These.bib}
+
 \begin{document}
 
 %-------------------------------------------------------------------------------
@@ -155,9 +157,7 @@ Here is the ampersand \& with the fancy ampersand \textit{\&}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \singlespacing
 \nocite{*} % Shows all references regardless of if cited
-\bibliographystyle{CodexStyle/bibstyles/nature-fr} % Use "nature" for english version
-\addcontentsline{toc}{chapter}{Bibliographie} % Add bibliography
-\bibliography{These}
+\printbibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % SO LONG SPACE COWBOY...
