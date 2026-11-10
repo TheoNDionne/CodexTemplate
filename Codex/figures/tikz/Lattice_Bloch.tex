@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+
+    % Lattice sites
+    \foreach \i in {0,1,2} {
+        \foreach \j in {0,1,2,3} {
+            \fill (\i*2,\j) circle (0.1cm);
+        }
+    }
+
+    % Label interesting sites
+    % % position labels
+    % \node[below] at (1.5,1) {$\ve{r}$};
+    % \node[below] at (1.5,2) {$\ve{r}+\ve{a}$};
+
+    % State labels
+    \node[above right] at (2,1) {$\ket{\Psi(\ve{r})}$};
+    \node[above right] at (2,2) {$\ket{\Psi(\ve{r}+\ve{a})}$};
+
+    % Lattice vector
+    \draw[very thick, MainColor, -stealth] (2,1) -- node [left, midway] {$\ve{a}$} (2,2);
+
+    % similitude
+    \draw[very thick, stealth-stealth, HighlightColor] (2.5,1.5) to[bend right] node [right] {$\sim$} (2.5,2.2);
+
+\end{tikzpicture}

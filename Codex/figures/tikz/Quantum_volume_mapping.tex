@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+
+% Draw the 1BZ as a torus
+\draw[thick] (0,0) ellipse (2 and 1); % outside
+\draw[thick] (-1,0.1) to[bend right] (1,0.1); % bottom inner perspective
+\draw[thick] (-0.8,0) to[bend left] (0.8,0); % bottom outer perspective
+\node at (0,-0.55) {\Large 1BZ}; % label
+
+% Projective space ball
+\draw[thick, dashed] (0,4) circle (2cm);
+\node at (0,5) {\Large$\mathbb{CP}^{n-1}$};
+
+% Image of the 1BZ
+\fill[MainColor] (0,3) circle (1cm);
+\node at (0,3) {\Large\color{white}$[\psi(\ve{k})]$};
+
+% Arrow from params to target
+\draw[-stealth, very thick, HighlightColor] (-1,0.7) to[bend left] (-0.6,2.6);
+
+\end{tikzpicture}

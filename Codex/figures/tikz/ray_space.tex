@@ -1,0 +1,59 @@
+\begin{tikzpicture}
+
+\node[above] at (2,3) {\footnotesize$S^{2n-1}\subset\mathbb{C}^{n}$}; % annotate bundle
+
+% Draw fibre bundle bottom
+\draw[thick] (0,0) -- (2,0);
+\draw[thick] (2,0) -- (3,1);
+\draw[thick] (3,1) -- (1,1);
+\draw[thick] (1,1) -- (0,0);
+
+% Draw projective space section
+\fill[MainColor] (0,0) -- (2,0) -- (3,1) -- (1,1) -- cycle;
+\node[right] at (2,0) {\footnotesize\color{MainColor}$\mathbb{CP}^{n-1}$}; % annotate section
+
+% Draw ray
+\draw[thick, HighlightColor] (1.25,0.75) -- (1.25,2+0.75);
+\filldraw[fill=white, draw=HighlightColor] (1.25,0.75) circle (0.04);
+\fill[HighlightColor] (1.25,2+0.75) circle (0.04);
+\node[below] at (1.25,0.75) {\footnotesize\color{white}$[\psi]$}; % annotate ray
+
+% Draw point on ray
+\fill (1.25,1.35) circle (0.04);
+\node[right] at (1.25,1.35) {\footnotesize$\ket{\psi}$};
+\fill (1.25,2.5) circle (0.04);
+\node[right] at (1.25,2.5) {\footnotesize$\Exp{i\phi}\!\ket{\psi}$};
+
+% Draw fibre bundle top
+\draw[thick] (0,0+2) -- (2,0+2);
+\draw[thick] (2,0+2) -- (3,1+2);
+\draw[thick] (3,1+2) -- (1,1+2);
+\draw[thick] (1,1+2) -- (0,0+2);
+
+% Draw fibre bundle sides
+\draw[thick] (0,0) -- (0,0+2);
+\draw[thick] (2,0) -- (2,0+2);
+\draw[thick] (3,1) -- (3,1+2);
+\draw[thick] (1,1) -- (1,1+2);
+
+% \draw[MainColor, -stealth, thick] (0,0) -- (2,0);
+% \draw[MainColor, -stealth, thick] (2,0) -- node[midway, right] {\color{MainColor}$[\psi]$} (3,1);
+% \draw[MainColor, -stealth, thick] (3,1) -- (1,1);
+% \draw[MainColor, -stealth, thick] (1,1) -- (0,0);
+
+% \draw[dashed] (0,0) -- (0,2);
+% \draw[dashed] (2,0) -- (2,2);
+% \draw[dashed] (3,1) -- (3,3);
+% \draw[dashed] (1,1) -- (1,3);
+
+% \draw[black, -stealth, thick] (0,0) -- (2,0+0.3);
+% \draw[black, -stealth, thick] (2,0+0.3) -- (3,1+2*0.3);
+% \draw[black, -stealth, thick] (3,1+2*0.3) -- node[near start, above] {$\psi$} (1,1+3*0.3);
+% \draw[black, -stealth, thick] (1,1+3*0.3) -- (0,0+4*0.3);
+
+% \draw[HighlightColor, thick] (0,0) -- node[midway, left] {\color{HighlightColor}$\Exp{i\phi}$} (0,1.2);
+
+% \fill[black] (0,0) circle (0.03);
+% \fill[black] (0,1.2) circle (0.03);
+
+\end{tikzpicture}

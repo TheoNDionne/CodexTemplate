@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+
+% Material
+\fill[MainColor] (0,0) -- (2,0) -- (2,3) -- (0,3) -- cycle;
+
+% Electric field
+\draw[-stealth, white, thick] (0.1,0.2) -- (0.1,2.8) node [near end, right] {$\ve{E}$};
+
+% Berry curvature
+\draw[thick, HighlightColor] (1.5,2.5) circle (0.1);
+\fill[HighlightColor] (1.5,2.5) circle (0.04);
+\node[above right] at (1.5,2.5) {\color{HighlightColor}$\ve{F}$};
+
+% Draw electron
+\node at (1,1.5) {\color{white}\Large e};
+\draw[-stealth, thick, white] (1.2,1.5) -- (1.8,1.5) node [near end, above] {\color{white}$\ve{v}_{\text{a}}$};
+
+\end{tikzpicture}

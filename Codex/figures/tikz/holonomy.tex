@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+
+\draw[MainColor, -stealth, thick] (0,0) -- (2,0);
+\draw[MainColor, -stealth, thick] (2,0) -- node[midway, right] {\color{MainColor}$[\psi]$} (3,1);
+\draw[MainColor, -stealth, thick] (3,1) -- (1,1);
+\draw[MainColor, -stealth, thick] (1,1) -- (0,0);
+
+\draw[dashed] (0,0) -- (0,2);
+\draw[dashed] (2,0) -- (2,2);
+\draw[dashed] (3,1) -- (3,3);
+\draw[dashed] (1,1) -- (1,3);
+
+\draw[black, -stealth, thick] (0,0) -- (2,0+0.3);
+\draw[black, -stealth, thick] (2,0+0.3) -- (3,1+2*0.3);
+\draw[black, -stealth, thick] (3,1+2*0.3) -- node[near start, above] {$\psi$} (1,1+3*0.3);
+\draw[black, -stealth, thick] (1,1+3*0.3) -- (0,0+4*0.3);
+
+\draw[HighlightColor, thick] (0,0) -- node[midway, left] {\color{HighlightColor}$\Exp{i\phi}$} (0,1.2);
+
+\fill[black] (0,0) circle (0.03);
+\fill[black] (0,1.2) circle (0.03);
+
+\end{tikzpicture}

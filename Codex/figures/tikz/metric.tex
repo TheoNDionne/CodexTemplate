@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+
+% \node[above] at (2,3) {\footnotesize$S^{2n-1}\subset\mathbb{C}^{n}$}; % annotate bundle
+
+% % Draw fibre bundle bottom
+% \draw[thick] (0,0) -- (2,0);
+% \draw[thick] (2,0) -- (3,1);
+% \draw[thick] (3,1) -- (1,1);
+% \draw[thick] (1,1) -- (0,0);
+
+% % Draw ray
+% \draw[thick, HighlightColor] (1.25,0.75) -- (1.25,2+0.75);
+% \filldraw[fill=white, draw=HighlightColor] (1.25,0.75) circle (0.04);
+% \fill[HighlightColor] (1.25,2+0.75) circle (0.04);
+% \node[below] at (1.25,0.75) {\footnotesize\color{white}$[\psi]$}; % annotate ray
+
+% % Draw point on ray
+% \fill (1.25,1.35) circle (0.04);
+% \node[right] at (1.25,1.35) {\footnotesize$\ket{\psi}$};
+% \fill (1.25,2.5) circle (0.04);
+% \node[right] at (1.25,2.5) {\footnotesize$\Exp{i\phi}\!\ket{\psi}$};
+
+% % Draw fibre bundle top
+% \draw[thick] (0,0+2) -- (2,0+2);
+% \draw[thick] (2,0+2) -- (3,1+2);
+% \draw[thick] (3,1+2) -- (1,1+2);
+% \draw[thick] (1,1+2) -- (0,0+2);
+
+% % Draw fibre bundle sides
+% \draw[thick] (0,0) -- (0,0+2);
+% \draw[thick] (2,0) -- (2,0+2);
+% \draw[thick] (3,1) -- (3,1+2);
+% \draw[thick] (1,1) -- (1,1+2);
+
+% Draw manifold
+\fill[MainColor] (0,0) -- (2,0) -- (3,1) -- (1,1) -- cycle;
+\node at (2.4,0) {\color{MainColor}$\mathscr{M}$};
+
+% Draw curve with curve
+\draw[white, thick] (0.5,0.15) to[bend left]node[midway, circle, inner sep=0, minimum size=0.1cm, fill=white, name=vectorpoint] {} (2.5,0.75);
+\node at (1.25,0.25) {\footnotesize\color{white}$\ve{V}(\lambda)$}; % vector label
+
+% Draw tangent vector
+\draw[-stealth, thick, HighlightColor] ($(vectorpoint)$) -- (2,0.9);
+\node at (1.75,0.6) {\footnotesize\color{HighlightColor}$\D\ve{V}$}; % vector label
+
+
+
+\end{tikzpicture}
