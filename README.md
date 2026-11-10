@@ -38,12 +38,12 @@ GNU GPL v3 (as included).
 
 ## ***Todo***
 
-- Sync up with latest pres
 - Sync up with memoir
 - Grand name uniformization tour
 - Write the contents and structure
 - Organize and partition `MAIN.tex`
 - Update subcaption
+- Simpler title section for shortform
 
 #### *Priority*
 
