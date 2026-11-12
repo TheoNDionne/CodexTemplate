@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+
+% draw phases
+\draw[HighlightColor, thick] (0,0) ellipse (2 and 0.15);
+\draw[HighlightColor, thick] (0,1.414) ellipse (1.414 and 0.15);
+\draw[HighlightColor, thick] (0,-1.414) ellipse (1.414 and 0.15);
+
+% draw half circles, one full one dashed
+\draw[MainColor,thick] (0,2) arc[radius=2cm, start angle=90, delta angle=-180];
+\draw[MainColor,thick, dashed] (0,2) arc[radius=2cm, start angle=90, delta angle=180];
+
+% Nodes for remarkable points
+\node[name=north, circle, inner sep=0, minimum size=0.1cm, fill=black] at (0,2) {};
+\node[above] at (north) {$(1,0)^{\symup{T}}$};
+\node[name=east, circle, inner sep=0, minimum size=0.1cm, fill=black] at (2,0) {};
+\node[right] at (east) {$\frac{1}{\sqrt{2}}(1,1)^{\symup{T}}$};
+\node[name=south, circle, inner sep=0, minimum size=0.1cm, fill=black] at (0,-2) {};
+\node[below] at (south) {$(0,1)^{\symup{T}}$};
+\node[name=green, circle, inner sep=0, minimum size=0.1cm, fill=black] at (0,-0.15) {};
+\node[below] at (green) {$\frac{1}{\sqrt{2}}(1,i)^{\symup{T}}$};
+\node[name=west, circle, inner sep=0, minimum size=0.1cm, fill=black] at (-2,0) {};
+\node[left] at (west) {$\frac{1}{\sqrt{2}}(1,-1)^{\symup{T}}$};
+
+\end{tikzpicture}

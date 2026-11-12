@@ -7,7 +7,7 @@ This repository contains a flexible and minimalistic LuaLaTeX template that can 
 - **shortform** documents (notes, assignments, ...)
 - **beamer** presentations (seminars, conference presentations, ...)
 
-The main philosophy of this project is to provide a versatile template with minimal busywork. In particular, these templates use the same preamble where documentclass-specific information is stored in class specific files.
+The main philosophy of this project is to provide a versatile template with minimal busywork. In particular, these templates use the same preamble where documentclass-specific information is stored in class-specific files.
 
 ## **Basic usage**
 
@@ -38,27 +38,26 @@ GNU GPL v3 (as included).
 
 ## ***Todo***
 
--
+- Sync up with memoir
 - Grand name uniformization tour
 - Write the contents and structure
 - Organize and partition `MAIN.tex`
+- Update subcaption
+- Simpler title section for shortform
 
 #### *Priority*
 
+- Clean up mains
 - Make a clean example document for each
 - Figure out what I want to do for tikz and pgfplots.
 
 #### *Beamer*
 
 - Fix bibliography... ugly
-- Add a big section divider slide macro or figure out how to do natively.
 
 #### *Backburner*
 
 - Do big picture tightening
-- Figure out how to do bibliographies in a modern way...
-- Update subcaption.
-- Add back in pdfx as a tourdeforce
 - Comment uniformization
 
 -----------------------------------------------

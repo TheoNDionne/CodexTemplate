@@ -1,16 +1,15 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169, handout]{beamer}
 
 \input{CodexStyle/preamble.tex}
 
-\title[Short title]
-{A sample presentation}
-\subtitle{With ramblings from a madman}
-\author{Théo N. Dionne}
+\title[Geometry in QM]{Geometry in Quantum Theory}
+\subtitle{...with a dash of condensed matter}
+\author{Presented by\\Théo N. Dionne}
 
 \institute[]{
-    APS March Meeting \\
-    Denver Colorado \\
-    \today
+    Institut Quantique \\
+    Sherbrooke, Québec \\
+    October 22 2026
 }
 
 \date{} % suppress date field
@@ -23,6 +22,8 @@
 
 \addbibresource{sample.bib}
 
+
+\usepackage[percent]{overpic}
 \begin{document}
 
 \begingroup\setbeamertemplate{navigation symbols}{}
@@ -32,112 +33,466 @@
 \end{frame}
 
 
-\begin{frame}[noframenumbering]\frametitle{Table of contents}
-    \tableofcontents
-\end{frame}
+% \begin{frame}[noframenumbering]\frametitle{Table of contents}
+%     \tableofcontents
+% \end{frame}
 
 \endgroup
 
-\begin{frame}
-\frametitle{Title}
-The quick brown fox jumps over the lazy dog \cite{hubbardI}.
-\pause
-\al{\cboxed{
-    i\hbar\del_t\ket{\Psi} = \op{H}\ket{\Psi}
-}}
-\end{frame}
-
-\section{A section}
-\subsection{A subsection}
-\begin{frame}
-\frametitle{What}\pause
-\begin{itemize}
-	\item One.\pause
-	\item Two.\pause
-	\item Three.
-\end{itemize}
-\end{frame}
-\subsection{Another subsection}
-\begin{frame}\frametitle{The state of the world}
-\begin{theorembox}{Birb}{thm:birb}
-	Birbs exist.
-\end{theorembox}
-\end{frame}
-
-\begin{frame}\frametitle{Colorbox test}
-\begin{highlightcbox}
-	\begin{center}
-	    A very important result.
-	\end{center}
-\end{highlightcbox}
-\end{frame}
-
-\begin{frame}\frametitle{A test of what the box environment looks like}
-    \begin{cbox}
-    This is the fundamental theorem of calculus:
-    \al{
-        \int_{a}^{b}f(t)\,\D{t} = F(b) - F(a)
-    }\pause
-    Notice:
-    \begin{itemize}
-        \item thing to say;\pause
-        \item another thing to say;\pause
-        \item consider $\ve{F} = m\ddot{\ve{x}}$.
-    \end{itemize}
-    \end{cbox}
-\end{frame}
-
-\begin{frame}\frametitle{A simple derivation}
-    Extremization of the action entails:
-    \ald{
-        \cboxed{0 = \delta\mathcal{S}} &= \int_{t_i}^{t_f}\D{t}\,\delta\mathcal{L}\pause\\
-        &= \int_{t_i}^{t_f}\D{t}\cro{\ddf[\mathcal{L}]{q}\delta{q} + \ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}}\delta\mspace{1.5mu}\dot{q}}\pause\\
-        &= \int_{t_i}^{t_f}\D{t}\cro{\ddf[\mathcal{L}]{q} - \dd{t}\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}}}\delta{q} + \underbrace{\int_{t_i}^{t_f}\D{t}\dd{t}\p{\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}}\delta{q}}}_{\text{vanishes (B.C.s)}}\pause\\
-        &\Rightarrow \cboxed{\ddf[\mathcal{L}]{q} - \dd{t}\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}} = 0}\pause
-    }
-    The converse is equally true, hence:\pause
-    \al{\highlightcboxed{
-        \delta\mathcal{S} = 0 \text{ \& B.C.s} \Longleftrightarrow \ddf[\mathcal{L}]{q} - \dd{t}\ddf[\mathcal{L}]{\mspace{1.5mu}\dot{q}} = 0
-    }}
-\end{frame}
-
-\begin{frame}\frametitle{Testing columns}
+\begin{frame}\frametitle{Geometry and Physics}
 \begin{columns}
-    \column{0.5\linewidth}
-    This is a Woodcock. Its features are:
-    \begin{itemize}
-        \item<2-> A beak
-        \item<3-> Wings
-        \item<4-> A brain (barely)
-        \item<5-> Camouflage
-    \end{itemize}
+	\column{0.6\linewidth}
+	    \visible<2->{\begin{columns} % Geometric optics
+			\column{0.5\linewidth}\centering
+			    {\Large Geometrical Optics}
+			\column{0.5\linewidth}\centering
+			\begin{overpic}[width=\linewidth]{figures/pdf/Lens3b.pdf}
+                \put (55,3) {\tiny [Wikipedia, Optics]}
+            \end{overpic}
+		\end{columns}}
+        \visible<3->{\begin{columns} % General Relativity
+            \column{0.5\linewidth}\centering
+                {\Large General Relativity}
+            \column{0.5\linewidth}\centering
+            \begin{overpic}[width=\linewidth]{figures/pdf/Spacetime_lattice_analogy_white-1.pdf}
+                \put (33,3) {\tiny [Wikipedia, General Relativity]}
+            \end{overpic}
+        \end{columns}}
+        \visible<4->{\begin{columns} % Quantum Field Theory
+            \column{0.5\linewidth}\centering
+                {\Large Quantum Field Theory}
+            \column{0.5\linewidth}\centering
+                \begin{overpic}[width=\linewidth]{figures/GaugeFixing.png}
+                    \put (45,63) {\tiny [Fradkin, QFT Integrated]}
+                \end{overpic}
+        \end{columns}}
+	\column{0.4\linewidth}\centering
+	\visible<5->{How about Quantum Mechanics?}
 
-    \column{0.5\linewidth}<1->
-    \centering
-    \includegraphics[width=\linewidth]{figures/American_woodcock.jpg}
+	\visible<6->{Is Quantum Geometry$^{\text{TM}}$ \textbf{new?}
+	\begin{overpic}[width=0.6\linewidth]{./figures/QuantumGeometryTrend.png}
+	    \put(5,55){\tiny[Google Trends]}
+	\end{overpic}}
+
+	\visible<7->{\textbf{No!} Geometry is \textbf{\color{MainColor}foundational}\vspace{1ex}
+
+	\begin{overpic}[width=0.7\linewidth]{figures/foundations.jpg}
+        \put(34,30){\bfseries\Large\color{MainColor}1932}
+        \put(18,2){\tiny\color{white}[Maison Tajan]}
+    \end{overpic}}
+
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}\frametitle{Roadmap}
+    \center{\LARGE\sffamily\bfseries\color{HighlightColor}
+        \enquote{Answer me these questions three...}
+    }
+    \vspace{2ex}
+    {\Large\begin{enumerate}
+        \item<2-> \textbf{\color{MainColor}What} is the \textbf{shape} of \textbf{inequivalent} quantum \textbf{states}?
+        \item<3-> \textbf{\color{MainColor}How} do we \textbf{quantify geometry}?
+        \item<4-> \textbf{\color{MainColor}Where} is \textbf{geometry} in \textbf{materials}?
+    \end{enumerate}}
+\end{frame}
+
+\begingroup\setbeamertemplate{navigation symbols}{}
+\begin{frame}[noframenumbering]
+    \center{
+	    \LARGE\sffamily\bfseries\color{HighlightColor} What do quantum states look like?
+	}
+	{\center{\resizebox{0.3\linewidth}{!}{\input{figures/tikz/ray_space.tex}}}}
+\end{frame}
+\endgroup
+
+\begin{frame}\frametitle{Quantum Theory}
+\begin{columns}
+	\column{0.8\linewidth}
+	\visible<2->{\textbf{Theories such that...}}
+    \begin{itemize}
+        \item<3->[\bullet] \textbf{\color{MainColor}State:} Complex vector $\ket{\psi}\in\mathbb{C}^{n}$
+        \item<4->[\bullet] \textbf{\color{MainColor}Observable:} Self-adjoint operators $\op{A}:\mathbb{C}^{n}\to\mathbb{C}^{n}~|~\op{A}^\dagger = \op{A}$
+        \item<5->[\bullet] \textbf{\color{MainColor}Expectation Value:} \color{black} Real number \alert<7->{$\avg{\op{A}}\equiv\frac{\bra{\psi}\op{A}\ket{\psi}}{\braket{\psi}{\psi}}\in\mathbb{R}$\uncover<7->{(!)}}
+    \end{itemize}
+    \vspace{2ex}
+    \uncover<6->{
+    \inlinecbox{
+        {Relevant geometry of quantum states is $\symit{\mathbb{C}^n}$?... }\uncover<7->{\alert{Not quite!}}
+    }
+    }
+	\column{0.2\linewidth}
+	\visible<8->{\textbf{\color{MainColor}Norm}\\$\ket{\psi}\sim{\color{MainColor}\alpha}\ket{\psi}$\\\vspace{10ex}}
+	\visible<9->{\textbf{\color{HighlightColor}Phase}\\$\ket{\psi}\sim\alert{\Exp{i\phi}}\ket{\psi}$}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}\frametitle{Norm Redundancy}
+\begin{columns}
+	\column{0.6\linewidth}
+        \visible<2->{For convenience, normalize to unity $\left|\ket{\psi}\right|=1$
+        \eqn{
+            \ket{\psi} \to \frac{\ket{\psi}}{\sqrt{\braket{\psi}{\psi}}}
+        }}
+        \visible<3->{Normalized states $\ket{\psi}\in\mathbb{C}^{n}$ define hypersphere
+        \eqn{
+            \braket{\psi}{\psi} = \sum_{i=1}^{n}\abs{c_i}^2 = \underbrace{\sum_{i=1}^{n}[(c_i')^2+(c_i'')^2]=1}_{2n\text{ real variables}}
+        }}
+        \visible<4->{\textbf{Distinct} states in $\symbf{S^{2n-1}}\subset\mathbb{C}^n$}
+	\column{0.4\linewidth}\centering
+	    \visible<3->{\resizebox{\linewidth}{!}{\input{figures/tikz/sphere_normalization.tex}}}
+	    \visible<5->{\textbf{\alert{What about phase?}}}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}\frametitle{Phase Redundancy}
+\begin{columns}
+	\column{0.6\linewidth}
+	\visible<2->{Pull out one factor of phase
+	\eqn{
+	    \ket{\psi} \sim \Exp{i\phi}\!\ket{\psi}
+	}}
+	\visible<3->{For example, factor out $\Exp{i\phi_1}$
+    \eqn{
+        &\pmat{r_1\Exp{i\phi_1}, r_2\Exp{i\phi_2},\dots,r_n\Exp{i\phi_n}}^{\symup{T}}\\
+        \sim\Exp{i\phi_1}&\pmat{{\color{MainColor}r_1}, {\color{MainColor}r_2}{\color{HighlightColor}\Exp{i(\phi_2-\phi_1)}},\dots,{\color{MainColor}r_n}{\color{HighlightColor}\Exp{i(\phi_n-\phi_1)}}}^{\symup{T}}
+    }}
+    \visible<4->{Under normalization, all distinct states
+    \eqn{
+        2n-1 \overset{\text{Normalization}}{\longrightarrow} 2n-2~\text{(real dimension)}
+    }}
+
+	\column{0.4\linewidth}
+	\visible<3->{\center{
+	    \resizebox{\linewidth}{!}{\input{figures/tikz/positive_sphere.tex}}
+	}}
+	\visible<5->{\textbf{What does this look like?}}
+
 \end{columns}
 \end{frame}
 
-\begin{frame}
-	\begin{center}
-		\vfill\vspace{1em}
-		    \Huge \sffamily \bfseries \color{MainColor} Questions (2 minutes)
-		\vfill
-	\end{center}
+\begin{frame}\frametitle{Example: Bloch Sphere}
+\begin{columns}
+	\column{0.5\linewidth}
+	    \visible<2->{\textbf{Two level} system $\ket{\psi}\in\mathbb{C}^{2}$
+					\eqn{\operatorname{dim}_{\mathbb{R}}(\psi)=4~~\overset{2n-2}{\Longrightarrow}~~ \symbf{2}~\text{distinct \textbf{dimensions}}}}
+		\visible<3->{For $u,v\in\mathbb{R}^{+}$ and $\Exp{i\phi}\in U(1)$
+		\eqn{\ket{\psi}=\pmat{{\color{MainColor}u},{\color{MainColor}v}{\color{HighlightColor}\Exp{i\phi}}}^{\symup{T}}}}
+		\visible<4->{Trouble at $u=0$, no biggie}
+	\column{0.5\linewidth}
+        \visible<3->{\center{\resizebox{\linewidth}{!}{\input{figures/tikz/Bloch.tex}}}}
+		\visible<5->{More \textbf{complicated} for $\symbf{n>2}$}
+\end{columns}
 \end{frame}
 
-\begin{frame}
-\begin{center}
-\begin{beamercolorbox}[sep=1em, center]{frametitle}
-  {\usebeamerfont{title}Thank You!}
-\end{beamercolorbox}
-\end{center}
+\begin{frame}\frametitle{Complex Projective Space}
+\begin{columns}
+	\column{0.6\linewidth}
+	\visible<2->{\textbf{Inequivalent} states: \textbf{complex projective} space
+	\eqn{
+	    \mathbb{C}^{n}&{\color{MainColor}\overset{\text{normalize}}{\longrightarrow}}S^{2n-1}{\color{HighlightColor}\overset{\symup{mod}~U(1)}{\longrightarrow}}\mathbb{CP}^{n-1}
+	}}
+	\visible<3->{$[\psi]$ in $\mathbb{CP}^{n-1}$ = \textbf{ray} of equivalent states
+	\eqn{
+	    \mathbb{C}^{n} ~~\overset{\ket{\psi}\sim z\ket{\psi}}{\longrightarrow}~~\mathbb{CP}^{n-1}
+	}}
+	\column{0.4\linewidth}
+	\visible<3->{\resizebox{0.8\linewidth}{!}{\input{figures/tikz/ray_space.tex}}}
+	\visible<4->{\enquote{\textbf{Fibre bundle} approach}}
+\end{columns}
+\visible<5->{\center{\inlinecbox{\Large General yet impractical... how to keep track?}}}
 \end{frame}
 
-\begin{frame}[allowframebreaks]\frametitle{Bibliography}
-\singlespacing
-\nocite{*} % Shows all references regardless of if cited
-\printbibliography
+
+\begingroup\setbeamertemplate{navigation symbols}{}
+\begin{frame}[noframenumbering]
+	\center{
+	    \LARGE\sffamily\bfseries\color{HighlightColor} How do we quantify state geometry?
+	}
+
+	{\center{
+	    \resizebox{0.4\linewidth}{!}{\input{figures/tikz/quantum_metric.tex}}\resizebox{0.4\linewidth}{!}{\input{figures/tikz/holonomy.tex}}
+	}}
 \end{frame}
+\endgroup
+
+
+\begin{frame}\frametitle{Metrics in a Nutshell}
+    \begin{columns}
+        \column{0.6\linewidth}
+        \visible<2->{Parametrized vector curve $\ve{V}(\lambda)$ on manifold $\mathscr{M}$
+        \eqn{
+            \D\ve{V}^2 = \D\ve{V}\cdot\D\ve{V} &= \del_{\mu}\ve{V}\cdot\del_{\nu}\ve{V}\dd[x^{\mu}]{\lambda}\dd[x^{\nu}]{\lambda}\D\lambda^2\\
+            &= {\color{MainColor}\del_{\mu}\ve{V}\cdot\del_{\nu}\ve{V}}\D x^{\mu}\D x^{\nu}
+        }}
+        \visible<3->{Arbitrary coordinates $\{x^{\mu}\}$
+        \eqn{\color{MainColor}
+            g_{\mu\nu} = \del_{\mu}\ve{V}\cdot\del_{\nu}\ve{V}
+        }}
+        \visible<4->{Metric {\color{MainColor}$g_{\mu\nu}$} encodes distances!}
+        \column{0.4\linewidth}\centering
+        \visible<2->{\resizebox{\linewidth}{!}{\input{figures/tikz/metric.tex}}}
+        \visible<5->{Metric for quantum states?
+        \eqn{
+            Q_{\mu\nu} \overset{?}{=} \braket{\del_{\mu}\psi}{\del_{\nu}\psi}
+        }}
+        \visible<6->{\textbf{Close, but no cigar!}}
+
+        \visible<7->{$\ket{\del_{\mu}\psi}$ tangent to $S^{2n-1}\neq\mathbb{CP}^{n-1}$}
+    \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Derivatives of Quantum States}
+    \begin{columns}
+        \column{0.6\linewidth}
+        \visible<2->{Two states on same ray, careful!
+        $$\ket{\psi} = \Exp{i\phi}\!\ket{\chi}~~\not\Longrightarrow~~\ket{\del\psi} \sim \ket{\del\chi}$$}
+        \visible<3->{Parallel component is \textbf{not} intrinsic
+        $$\ket{\partial\psi} = \Exp{i\phi}\!\ket{\partial\chi} + \alert{i\partial\phi\!\ket{\psi}}$$}
+        \visible<4->{Perpendicular component \textbf{is}
+        $$\ket{\mathcal{D}\psi}\equiv\p{\mathbb{1} - \ketbra{\psi}{\psi}}\!\ket{\partial\psi}$$}
+
+        \column{0.4\linewidth}
+            \visible<3->{\resizebox{\linewidth}{!}{\input{figures/tikz/vector_components.tex}}}
+            \visible<5->{\textbf{Covariant derivative}
+            $$\cboxed{\ket{\mathcal{D}\psi} = \Exp{i\phi}\!\ket{\mathcal{D}\chi}}$$}
+            \visible<6->{Tangent to $\mathbb{CP}^{n-1}$}
+    \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Metric on State Space: Fubini-Study}
+\visible<2->{\textbf{Metric} in $\mathbb{CP}^{n-1}$: \textbf{Fubini-Study}
+    {\large\eqn{\cboxed{Q_{\mu\nu} = \braket{\mathcal{D}_\mu\psi}{\mathcal{D}_\nu\psi} = \langle\del_\mu\psi|\p{1 - \ketbra{\psi}{\psi}}|\del_\nu\psi\rangle}}}}
+\visible<3->{Manifestly gauge invariant
+\eqn{
+    \left\langle\mathcal{D}_\mu\psi\middle|\mathcal{D}_\nu\psi\right\rangle = \left\langle\mathcal{D}_\mu\chi\middle|\Exp{-i\phi}\Exp{i\phi}\middle|\mathcal{D}_\nu\chi\right\rangle = \left\langle\mathcal{D}_\mu\chi\middle|\mathcal{D}_\nu\chi\right\rangle
+}}
+\visible<4->{In litterature, separated into two parts: \textbf{\color{MainColor}quantum metric} and \textbf{\alert{Berry curvature}}
+{\large$$
+    Q_{\mu\nu} = {\color{MainColor}{g_{\mu\nu}}} - \frac{i}{2}\alert{\mathcal{F}_{\mu\nu}}
+$$}}
+\visible<5->{Since $Q_{\mu\nu}$ is \textbf{hermitian}
+\eqn{
+    &{\color{MainColor}g_{\mu\nu} = g_{\nu\mu}~~~(\text{symmetric})} & &{\color{HighlightColor}\mathcal{F}_{\mu\nu} = -\mathcal{F}_{\nu\mu}~~~(\text{antisymmetric})}
+}}
+\end{frame}
+
+\begin{frame}\frametitle{Quantum metric}
+\begin{columns}
+\column{0.7\linewidth}
+\visible<2->{Distance between two neigboring rays
+$$\D[\psi]^2 = Q_{\mu\nu}\D{x}^{\mu}\D{x}^{\nu} = {\color{MainColor}g_{\mu\nu}}\D{x}^{\mu}\D{x}^{\nu} - \frac{i}{2}\underbrace{\cancel{{\color{HighlightColor}\mathcal{F}_{\mu\nu}}\D{x}^{\mu}\D{x}^{\nu}}}_{\text{antisymmetry}}$$}
+\visible<3->{Only \textbf{{\color{MainColor}quantum metric} encodes distance} between rays!}
+
+\column{0.3\linewidth}
+\visible<3->{\resizebox{\linewidth}{!}{\input{figures/tikz/quantum_metric.tex}}}
+\end{columns}
+
+\visible<4->{\center{\Large Where does the \textbf{\color{HighlightColor}Berry curvature} appear?}}
+
+
+\end{frame}
+
+\begin{frame}\frametitle{Berry curvature}
+
+\begin{columns}
+	\column{0.6\linewidth}
+	\visible<2->{\textbf{Intuition} from explicit form
+	\eqn{
+	    \mathcal{F}_{\mu\nu} &= -2\,\symup{Im}\p{\braket{\mathcal{D}_\mu\psi}{\mathcal{D}_\nu\psi}}\\
+					&= i\p{\braket{\mathcal{D}_\mu\psi}{\mathcal{D}_\nu\psi} - \braket{\mathcal{D}_\nu\psi}{\mathcal{D}_\mu\psi}}\\
+					&= \highlightcboxed{\bra{\psi}i\cro{\mathcal{D}_\mu,\mathcal{D}_\nu}\ket{\psi}} \visible<3->{~\longleftarrow\text{Failure to close}}
+	}}
+	\visible<6->{For general loop $\mathcal{C} = \del\mathcal{S}$
+	\eqn{\alert{\phi} = \oint_{\mathcal{C}}\D{\alert{\phi}} = \iint_{\mathcal{S}} \alert{F_{12}}\D{x}^1\D{x}^2}}
+	\column{0.4\linewidth}
+	\visible<4->{Close what?} \visible<5->{Close a \textbf{loop}!}
+	\visible<5->{\resizebox{\linewidth}{!}{\input{figures/tikz/holonomy.tex}}}
+	\visible<5->{\eqn{
+		    \alert{\Exp{i\phi}} &\simeq 1 + iF_{12}\D{x}^{1}\D{x}^{2}
+		}}
+
+\end{columns}
+
+\end{frame}
+
+\begingroup\setbeamertemplate{navigation symbols}{}
+\begin{frame}[noframenumbering]
+	\center{
+	    \LARGE\sffamily\bfseries\color{HighlightColor} Where is geometry in condensed matter?
+	}
+	\center{
+	    \resizebox{0.2\linewidth}{!}{\input{figures/tikz/Hall.tex}}
+	}
+\end{frame}
+\endgroup
+
+\begin{frame}\frametitle{State Space in a Crystal}
+    \begin{columns}
+    \column{0.6\linewidth}
+    \visible<2->{Lattice \textbf{translation symmetry}
+    \eqn{
+        \ket{\Psi(\ve{r}+\ve{a})} \sim \ket{\Psi(\ve{r})}
+    }}
+    \visible<3->{Decompose on basis of \textbf{Bloch states}
+    \eqn{
+        \ket{\psi_{\ve{k}}(\ve{r})} = \Exp{i\ve{k}\cdot\ve{r}}\ket{u_{\ve{k}}(\ve{r})}
+    }}
+    \visible<4->{\textbf{Wavevectors} $\ve{k}\in\text{1BZ}$: \textbf{parameter space}}
+    \column{0.4\linewidth}
+    \visible<2->{\resizebox{\linewidth}{!}{\input{figures/tikz/Lattice_Bloch.tex}}}
+    \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Anomalous Velocity}
+
+        \visible<2->{Take \textbf{semiclassical} limit (\textbf{packet})
+        \eqn{
+            \Psi(\ve{r}, \ve{k}) \longrightarrow \Delta{\ve{r}}, \Delta{\ve{k}}, E, \dots
+        }}
+        \visible<3->{\textbf{Equations of motion} for $\dot{\ve{r}}$ and $\dot{\ve{k}}$
+        \eqn{
+            \hbar\dot{\ve{k}} &= -e\cro{\ve{E} + \dot{\ve{r}}\times\ve{B}}\\
+            \dot{\ve{r}} &= \frac{1}{\hbar}\ddp[\varepsilon]{k} - \ve{\dot{k}}\times\alert{\ve{F}}
+        }}
+        \visible<4->{Berry \textbf{curvature} gives \enquote{\textbf{anomalous velocity}}
+        \eqn{
+            {\color{HighlightColor}F_{a}} \equiv \frac{1}{2}\varepsilon_{abc}F_{bc}
+        }}\vspace{-2ex}
+        \visible<5->{\center{\inlinecbox{\Large\textbf{Where} can we \textbf{see this}?}}}
+\end{frame}
+
+\begin{frame}\frametitle{Chern Insulators}
+    \begin{columns}
+        \column{0.4\linewidth}
+        \visible<2->{\center{\resizebox{0.7\linewidth}{!}{\input{figures/tikz/Hall.tex}}}
+        \visible<5->{\Large\eqn{
+        \sigma_{yx} = \frac{e^2}{h}C
+        }}}
+
+        \column{0.6\linewidth}
+        \visible<2->{One filled band: \textbf{ignore normal term}
+        \eqn{
+            \ve{v}_a = \frac{e}{\hbar}\ve{E}\times\ve{F}
+        }}
+        \visible<3->{Calculate \textbf{Hall conductivity}
+        \eqn{
+            \sigma_{yx} = \frac{e^2}{h}\frac{1}{2\pi}\int_{\text{1BZ}}F_{xy}\D{k_x}\D{k_y}
+        }}
+        \visible<4->{Chern number is \textbf{quantized} (Gauss-Bonnet)
+        \eqn{
+            C = \frac{1}{2\pi}\int_{\text{1BZ}}F_{xy}\D{k_x}\D{k_y} \in \mathbb{Z}
+        }}
+    \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{A link between curvature and volume}
+    \begin{columns}
+        \column{0.6\linewidth}
+        \visible<2->{\textbf{2D crystal}: Fubini-Study is simple
+        \eqn{
+            \symup{Q} = \pmat{{\color{MainColor}g_{xx}} & {\color{MainColor}g_{xy}} - \frac{i}{2}{\color{HighlightColor}F_{xy}}\\
+            {\color{MainColor}g_{xy}} + \frac{i}{2}{\color{HighlightColor}F_{xy}} & {\color{MainColor}g_{yy}} \\}
+        }}
+        \visible<3->{$\Det{\symup{Q}}\geq0$ gives \textbf{local constraint}
+        \eqn{
+            \sqrt{\Det{\color{MainColor}\symup{g}}}\geq \frac{1}{2}\abs{\color{HighlightColor}F_{xy}}
+        }}
+        \visible<4->{Integration yields \textbf{global constraint}
+        \eqn{
+            \int_{\text{1BZ}} \sqrt{\Det{\color{MainColor}\symup{g}}}\,\D^2k &\geq \frac{1}{2}\abs{\int_{\text{1BZ}}{\color{HighlightColor}F_{xy}}\,\D^2k}\\
+            {\color{MainColor}\mathcal{V}} &\geq \pi\abs{\color{HighlightColor}C}
+        }}
+
+
+        \column{0.4\linewidth}
+        \visible<5->{\textbf{Volume} of \textbf{1BZ's image} in $\mathbb{CP}^{n-1}$
+        \eqn{
+            {\color{MainColor}\mathcal{V}} = \int_{\text{1BZ}} \sqrt{\Det{\color{MainColor}\symup{g}}}\,\D^2k
+        }
+
+        \center{\resizebox{0.5\linewidth}{!}{\input{figures/tikz/Quantum_volume_mapping.tex}}}}
+    \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Geometry in Quantum Theory...}
+
+    \vspace{-3ex}
+    \begin{columns}[t]
+        \column{0.33\linewidth}
+        \center{\color{MainColor}\LARGE\sffamily\bfseries What}
+
+        \visible<2->{Distinct states $[\psi]\in\mathbb{CP}^{n-1}$
+
+        \resizebox{0.8\linewidth}{!}{\input{figures/tikz/ray_space.tex}}
+
+        Remove \textbf{\color{MainColor}norm} and \textbf{\color{HighlightColor}phase}}
+
+
+
+        \column{0.33\linewidth}
+        \center{\color{MainColor}\LARGE\sffamily\bfseries How}
+
+        \visible<3->{Fubini-Study metric
+        \vspace{-2ex}
+        \eqn{
+            Q_{\mu\nu} &= \braket{\mathcal{D}_\mu\psi}{\mathcal{D}_\nu\psi}\\
+            {\color{MainColor}g_{\mu\nu}} &= \operatorname{Re}Q_{\mu\nu}\\
+            \alert{F_{\mu\nu}} &= -2\operatorname{Im}Q_{\mu\nu}
+        }
+        \vspace{-3ex}
+        \resizebox{0.5\linewidth}{!}{\input{figures/tikz/quantum_metric.tex}}\resizebox{0.5\linewidth}{!}{\input{figures/tikz/holonomy.tex}}
+        \vspace{-4ex}
+        \eqn{
+            \D[\psi]^2 &= {\color{MainColor}g_{\mu\nu}}\D{x}^{\mu}\D{x}^{\nu}\\
+            \phi &= \iint_{\mathcal{S}}{\color{HighlightColor}F_{\mu\nu}}\D{x}^{\mu}\D{x}^{\nu}
+        }}
+
+        \column{0.33\linewidth}
+        \center{\color{MainColor}\LARGE\sffamily\bfseries Where}
+
+        \visible<4->{Electron dynamics
+        \resizebox{0.5\linewidth}{!}{\input{figures/tikz/Hall.tex}}
+        \eqn{
+            \sigma_{yx} = \frac{e^2}{h}{\color{HighlightColor}C} ~~,~~\ve{B}=\ve{0}
+        }
+        \eqn{
+            {\color{MainColor}\mathcal{V}}\geq\pi\abs{\color{HighlightColor}C}
+        }}
+
+    \end{columns}
+\end{frame}
+
+\begingroup\setbeamertemplate{navigation symbols}{}
+
+\begin{frame}[noframenumbering]\frametitle{Further Reading}
+\visible<2->{
+\textbf{Overview of topology and geometry in physics (from scratch!)}
+\begin{itemize}
+	\item[$\rightarrow$]\fullcite{Nakahara}
+\end{itemize}
+\vspace{2ex}
+}
+
+\visible<3->{
+\textbf{Excellent (in house) lecture notes}
+\begin{itemize}
+    \item[$\rightarrow$]\fullcite{IonNotes}
+\end{itemize}
+}
+\end{frame}
+
+
+
+\begin{frame}[noframenumbering]
+\center{
+	    \huge\sffamily\bfseries\color{HighlightColor} Questions?
+}
+\end{frame}
+
+\endgroup
 
 \end{document}

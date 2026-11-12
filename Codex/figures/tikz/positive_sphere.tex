@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+
+% Axes just cause
+\draw[thick, -Stealth] (0,0) -- (0,4);
+\node[below] at (4,0) {$r_1$};
+\draw[thick, -Stealth] (0,0) -- (4,0);
+\node[left] at (0,4) {$r_2$};
+
+% Add a tick
+\node[below] at (3,0) {$1$};
+\node[left] at (0,3) {$1$};
+
+% Draw circular shell
+\draw[MainColor, thick] (3,0) arc[start angle=0, delta angle=90, radius=3cm] node[pos=0.5, circle, minimum size=0.1cm, inner sep=0, fill=black, name=point] {};
+\node at (1.5,1.5) {\Large\color{MainColor}Norms}; % annotate shell
+\node at (1.5,1.1) {\Large\color{MainColor}}; % annotate shell
+
+% Draw U(1) circle
+\draw[HighlightColor, thick] (3,3) circle (0.5cm);
+\node at (3,3) {\color{HighlightColor}$U\!(1)$};
+\node at (4.1,3.5) {\color{HighlightColor}$\times(n-1)$};
+
+% Draw arrow
+\draw[-stealth, thick] (2.8,2.5) to[bend left] (point);
+
+\end{tikzpicture}
