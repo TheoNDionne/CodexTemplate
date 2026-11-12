@@ -5,8 +5,8 @@
 %================================================================================================%
 
 %%% Choose between electronic and print versions
-% \documentclass[titlepage,oneside,letterpaper,11pt]{article} % electronic
-\documentclass[titlepage,twoside,letterpaper,12pt]{article} % print
+\documentclass[titlepage,oneside,letterpaper,11pt]{article} % electronic
+% \documentclass[titlepage,twoside,letterpaper,12pt]{article} % print
 
 %%% Insert date here
 \def\DATE{\color{red}DATE DU DEPOT FINAL\color{black}}
@@ -15,66 +15,25 @@
 
 \addbibresource{sample.bib} % add in bib for biblatex
 
+\title{Derivation}
+\author{T-AUX}
+\date{\today}
+
 \begin{document}
 
 %-------------------------------------------------------------------------------
 % Coverpage
-\input{sections/debut/page_titre.tex}
-\newpage
-% \frontmatter
-%-------------------------------------------------------------------------------
-% page de composition du jury
-% modifier/commenter au besoin
-
+% \input{sections/debut/page_titre.tex}
 % \newpage
-% \thispagestyle{empty}
-% \begin{center}
-% \vglue 1cm
-% Le \DATE \\[1cm]
-% {\it le jury a accepté le mémoire de Monsieur Hubbard dans sa version finale.}\\[1cm]
-% Membres du jury\\[1cm]
 
-% Professeur Dirac\\
-% Directeur de recherche\\
-% Département de physique\\[8mm plus 5mm]
-
-% Professeur Plank\\
-% Membre interne\\
-% Département de physique\\[8mm plus 5mm]
-
-% Professeur Pauli\\
-% Président rapporteur\\
-% Département de physique\\[8mm plus 5mm]
-
-
-% \end{center}
-
-
-%-------------------------------------------------------------------------------
-% Page de dédicace
-
-% \newpage
-% \vglue 5cm
-% \begin{flushright}
-% À mon idole, GTools.
-% \end{flushright}
-
-
-%-------------------------------------------------------------------------------
-% Sommaire
-% \newpage
-% \onehalfspacing
-% \addcontentsline{toc}{chapter}{Sommaire}\chapter*{Sommaire}
-% \input{sections/debut/sommaire}
-
-%-------------------------------------------------------------------------------
-% remerciements
-
-% \chapter{Remerciements}
-
-% \markboth{Remerciements}{Remerciements}
-% \input{sections/debut/remerciements}
-
+% Short title instead
+\begin{center}
+\makeatletter
+{\color{MainColor}\LARGE\bfseries\@title}\\
+{\large\@author}\\
+{\large\@date}
+\makeatother
+\end{center}
 %-------------------------------------------------------------------------------
 % tables des matières, des tableaux et des figures, etc.
 
